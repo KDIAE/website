@@ -1,9 +1,22 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import AnimateIn from "@/components/AnimateIn";
 import AnimateStagger from "@/components/AnimateStagger";
 import StaggerItem from "@/components/StaggerItem";
 import MarqueeStrip from "@/components/MarqueeStrip";
+
+export const metadata: Metadata = {
+  title: "Academics – CBSE Curriculum from Nursery to Class VI",
+  description:
+    "Explore KDIAE's CBSE-aligned academic programs for ages 3–11 across three stages: Early Childhood, Lower Primary, and Upper Primary. Smart classrooms, activity-based learning.",
+  alternates: { canonical: "https://kdiae.in/academics" },
+  openGraph: {
+    title: "Academics – CBSE Curriculum from Nursery to Class VI",
+    description: "CBSE-aligned programs for ages 3–11 at KDIAE, Hooghly. Smart classrooms, qualified faculty.",
+    url: "https://kdiae.in/academics",
+  },
+};
 import {
   FaSeedling, FaStar, FaBook,
   FaLaptop, FaBookOpen, FaRunning, FaMusic, FaDesktop, FaPaintBrush,

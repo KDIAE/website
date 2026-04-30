@@ -1,7 +1,7 @@
-"use client";
+import type { Metadata } from "next";
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import Image from "next/image";
-import { motion } from "framer-motion";
 import AnimateIn from "@/components/AnimateIn";
 import AnimateStagger from "@/components/AnimateStagger";
 import StaggerItem from "@/components/StaggerItem";
@@ -9,9 +9,23 @@ import type { IconType } from "react-icons";
 import {
   FaCheckCircle, FaFileDownload, FaPaperclip, FaComments,
   FaCreditCard, FaGraduationCap, FaSeedling, FaChild, FaBook,
-  FaExchangeAlt, FaPhone, FaArrowDown, FaFire, FaEnvelope,
-  FaCheckDouble,
+  FaExchangeAlt, FaPhone, FaArrowDown, FaEnvelope, FaCheck
 } from "react-icons/fa";
+
+const AdmissionFormClient = dynamic(() => import("@/components/AdmissionFormClient"), { loading: () => <div className="h-[600px] animate-pulse bg-gray-100 rounded-3xl" /> });
+
+export const metadata: Metadata = {
+  title: "Admissions 2026–27 – Apply Online | KDIAE",
+  description:
+    "Apply online for admissions at KD Institute of Advance Education for 2026–27. Open for Nursery to Class VI. Simple 6-step process, transparent fee structure.",
+  alternates: { canonical: "https://kdiae.in/admissions" },
+  openGraph: {
+    title: "Admissions 2026–27 – Apply Online | KDIAE",
+    description: "Admissions open for 2026–27 at KDIAE, Hooghly. Apply online for Nursery to Class VI.",
+    url: "https://kdiae.in/admissions",
+  },
+};
+
 
 const steps: { step: string; title: string; icon: IconType; bg: string; color: string; desc: string }[] = [
   { step: "01", title: "Check Eligibility", icon: FaCheckCircle, bg: "bg-[#212529]", color: "#FFCA2B", desc: "Confirm your child meets the age criteria for the desired class." },
@@ -58,35 +72,30 @@ export default function AdmissionsPage() {
         <div className="absolute bottom-10 left-20 w-56 h-56 rounded-full bg-[#007BFF]/15 blur-3xl" />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
-          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-            <span className="inline-flex items-center gap-2 bg-[#007BFF]/15 border border-[#007BFF]/30 text-[#007BFF] text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-5">
-              <FaFire size={11} /> Admissions <span className="text-white">Open</span> Now
-            </span>
-          </motion.div>
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight max-w-3xl mb-5"
-          >
-            Join KDIAE for<br />
-            <span className="text-[#007BFF]">2026 – 27</span>
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-gray-300 text-lg max-w-xl mb-8 leading-relaxed"
-          >
-            We welcome students from Nursery to Class VI. Apply now and secure your child&apos;s seat at KD Institute of Advance Education.
-          </motion.p>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.3 }}
-            className="flex flex-wrap gap-4"
-          >
-            <a href="#apply-steps" className="inline-flex items-center gap-2 bg-[#FFCA2B] text-[#212529] font-black px-7 py-3.5 rounded-xl hover:bg-yellow-400 transition-colors">
-              View Process <FaArrowDown size={13} />
+          <AnimateIn direction="up" delay={0.1}>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black leading-tight max-w-3xl mb-5">
+              Join KDIAE for<br />
+              <span className="text-[#007BFF]">2026 – 27</span>
+            </h1>
+          </AnimateIn>
+          <AnimateIn direction="up" delay={0.2}>
+            <p className="text-gray-300 text-lg max-w-xl mb-8 leading-relaxed">
+              We welcome students from Nursery to Class VI. Apply now and secure your child&apos;s seat at KD Institute of Advance Education.
+            </p>
+          </AnimateIn>
+          <AnimateIn direction="up" delay={0.3}>
+            <div className="flex flex-wrap gap-4">
+            <a href="#apply-online" className="inline-flex items-center gap-2 bg-[#FFCA2B] text-[#212529] font-black px-7 py-3.5 rounded-xl hover:bg-yellow-400 transition-colors">
+              Apply Now <FaArrowDown size={13} />
+            </a>
+            <a href="#apply-steps" className="inline-flex items-center gap-2 border border-white/20 text-white font-semibold px-7 py-3.5 rounded-xl hover:bg-white/10 transition-colors hover:border-[#007BFF]/50">
+              View Process
             </a>
             <Link href="/contact" className="inline-flex items-center gap-2 border border-white/20 text-white font-semibold px-7 py-3.5 rounded-xl hover:bg-white/10 transition-colors hover:border-[#007BFF]/50">
               <FaPhone size={13} /> Contact Us
             </Link>
-          </motion.div>
+            </div>
+          </AnimateIn>
         </div>
       </section>
 
@@ -94,7 +103,6 @@ export default function AdmissionsPage() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <AnimateIn direction="up" className="text-center mb-12">
-            <span className="text-[#FFCA2B] font-bold uppercase text-xs tracking-[0.2em]">Who Can Apply</span>
             <h2 className="text-3xl md:text-4xl font-black text-[#212529] mt-2">
               Admission <span className="text-[#007BFF]">Criteria</span>
             </h2>
@@ -120,7 +128,6 @@ export default function AdmissionsPage() {
       <section id="apply-steps" className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <AnimateIn direction="up" className="text-center mb-14">
-            <span className="text-[#FFCA2B] font-bold uppercase text-xs tracking-[0.2em]">How to Apply</span>
             <h2 className="text-3xl md:text-4xl font-black text-[#212529] mt-2">
               Simple Steps to <span className="text-[#007BFF]">Apply</span>
             </h2>
@@ -148,7 +155,6 @@ export default function AdmissionsPage() {
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <AnimateIn direction="up" className="text-center mb-12">
-            <span className="text-[#FFCA2B] font-bold uppercase text-xs tracking-[0.2em]">Required</span>
             <h2 className="text-3xl md:text-4xl font-black text-[#212529] mt-2">
               <span className="text-[#007BFF]">Documents</span> Needed
             </h2>
@@ -157,7 +163,7 @@ export default function AdmissionsPage() {
             {documents.map((doc) => (
               <StaggerItem key={doc}>
                 <div className="flex items-center gap-3 bg-gray-50 border border-gray-100 rounded-xl px-4 py-3">
-                  <FaCheckDouble size={14} className="text-[#007BFF] flex-shrink-0" />
+                  <FaCheck size={14} className="text-[#007BFF] flex-shrink-0" />
                   <span className="text-sm text-gray-700">{doc}</span>
                 </div>
               </StaggerItem>
@@ -170,7 +176,6 @@ export default function AdmissionsPage() {
       <section className="py-20 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <AnimateIn direction="up" className="text-center mb-12">
-            <span className="text-[#FFCA2B] font-bold uppercase text-xs tracking-[0.2em]">Approximate</span>
             <h2 className="text-3xl md:text-4xl font-black text-[#212529] mt-2">
               <span className="text-[#007BFF]">Fee Structure</span>
             </h2>
@@ -202,6 +207,9 @@ export default function AdmissionsPage() {
           </AnimateIn>
         </div>
       </section>
+
+      {/* Online Application Form */}
+      <AdmissionFormClient />
 
       {/* CTA */}
       <section className="py-20 bg-[#212529] relative overflow-hidden">

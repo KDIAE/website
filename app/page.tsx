@@ -1,6 +1,19 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import AnimateIn from "@/components/AnimateIn";
+
+export const metadata: Metadata = {
+  title: "KDIAE – Quality CBSE School in Hooghly, West Bengal",
+  description:
+    "KD Institute of Advance Education offers premium CBSE education from Nursery to Class VI in Hooghly, West Bengal. Admissions open for 2026–27. Safe campus, qualified faculty, activity-based learning.",
+  alternates: { canonical: "https://kdiae.in" },
+  openGraph: {
+    title: "KDIAE – Quality CBSE School in Hooghly, West Bengal",
+    description: "Premium CBSE education from Nursery to Class VI. Admissions open 2026–27.",
+    url: "https://kdiae.in",
+  },
+};
 import AnimateStagger from "@/components/AnimateStagger";
 import StaggerItem from "@/components/StaggerItem";
 import CountUp from "@/components/CountUp";

@@ -2,16 +2,47 @@
 import { useState } from "react";
 import { FaPaperPlane } from "react-icons/fa";
 
+// ── Validation helpers ──────────────────────────────────────────────────────
+const digitCount = (v: string) => v.replace(/\D/g, "").length;
+const filterTel  = (raw: string) => {
+  const s = raw.replace(/[^\d\s\-()+]/g, "");
+  let d = 0, out = "";
+  for (const ch of s) { if (/\d/.test(ch)) { if (d >= 10) continue; d++; } out += ch; }
+  return out;
+};
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
 export default function ContactForm() {
   const [formData, setFormData] = useState({ name: "", email: "", phone: "", message: "" });
+  const [touched, setTouched] = useState<Record<string, boolean>>({});
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
 
+  const touch = (name: string) => setTouched((p) => ({ ...p, [name]: true }));
+
+  const phoneError = touched.phone && formData.phone && digitCount(formData.phone) !== 10
+    ? "Enter a valid 10-digit mobile number" : "";
+  const emailError = touched.email && formData.email && !EMAIL_RE.test(formData.email)
+    ? "Enter a valid email address" : "";
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: name === "phone" ? filterTel(value) : value,
+    }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    // Validate before submitting
+    if (formData.phone && digitCount(formData.phone) !== 10) {
+      touch("phone");
+      return;
+    }
+    if (formData.email && !EMAIL_RE.test(formData.email)) {
+      touch("email");
+      return;
+    }
     setStatus("sending");
     await new Promise((r) => setTimeout(r, 1200));
     setStatus("sent");
@@ -51,20 +82,29 @@ export default function ContactForm() {
           required
           value={formData.email}
           onChange={handleChange}
+          onBlur={() => touch("email")}
           placeholder="your@email.com"
-          className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#007BFF] transition-colors"
+          className={`w-full border rounded-xl px-4 py-3 text-sm focus:outline-none transition-colors ${
+            emailError ? "border-red-400 focus:border-red-400" : "border-gray-200 focus:border-[#007BFF]"
+          }`}
         />
+        {emailError && <p className="text-xs text-red-500 mt-1">{emailError}</p>}
       </div>
       <div>
         <label className="block text-sm font-semibold text-[#212529] mb-1.5">Phone Number</label>
         <input
           type="tel"
           name="phone"
+          inputMode="numeric"
           value={formData.phone}
           onChange={handleChange}
-          placeholder="+91 XXXXX XXXXX"
-          className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#007BFF] transition-colors"
+          onBlur={() => touch("phone")}
+          placeholder="10-digit mobile number"
+          className={`w-full border rounded-xl px-4 py-3 text-sm focus:outline-none transition-colors ${
+            phoneError ? "border-red-400 focus:border-red-400" : "border-gray-200 focus:border-[#007BFF]"
+          }`}
         />
+        {phoneError && <p className="text-xs text-red-500 mt-1">{phoneError}</p>}
       </div>
       <div>
         <label className="block text-sm font-semibold text-[#212529] mb-1.5">Message</label>

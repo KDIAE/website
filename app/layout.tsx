@@ -21,10 +21,58 @@ const inter = Inter({
   display: "swap",
 });
 
+const BASE_URL = "https://kdiae.in";
+
 export const metadata: Metadata = {
-  title: "KD Institute of Advance Education | Quality CBSE Education",
+  metadataBase: new URL(BASE_URL),
+  title: {
+    default: "KD Institute of Advance Education | CBSE School in Hooghly",
+    template: "%s | KDIAE – CBSE School, Hooghly",
+  },
   description:
-    "KD Institute of Advance Education – A nurturing CBSE-focused school committed to academic excellence, values, and holistic development in Hooghly, West Bengal.",
+    "KD Institute of Advance Education (KDIAE) is a leading CBSE-affiliated school in Hooghly, West Bengal offering Nursery to Class VI education. Admissions open for 2026–27.",
+  keywords: [
+    "CBSE school Hooghly",
+    "KD Institute of Advance Education",
+    "KDIAE",
+    "school in Hooghly West Bengal",
+    "admissions 2026 Hooghly",
+    "nursery to class VI CBSE",
+    "Pandua Kalna road school",
+    "best school Hooghly",
+  ],
+  authors: [{ name: "KD Institute of Advance Education", url: BASE_URL }],
+  creator: "KD Institute of Advance Education",
+  publisher: "KD Institute of Advance Education",
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true } },
+  alternates: { canonical: BASE_URL },
+  openGraph: {
+    type: "website",
+    locale: "en_IN",
+    url: BASE_URL,
+    siteName: "KD Institute of Advance Education",
+    title: "KD Institute of Advance Education | CBSE School in Hooghly",
+    description:
+      "A nurturing CBSE school in Hooghly, West Bengal offering quality education from Nursery to Class VI. Admissions open for 2026–27.",
+    images: [
+      {
+        url: "/gallery/front_building.jpg",
+        width: 1200,
+        height: 630,
+        alt: "KD Institute of Advance Education – School Campus",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "KD Institute of Advance Education | CBSE School in Hooghly",
+    description:
+      "A nurturing CBSE school in Hooghly, West Bengal. Admissions open for 2026–27.",
+    images: ["/gallery/front_building.jpg"],
+  },
+  verification: {
+    google: "",
+  },
 };
 
 export default function RootLayout({

@@ -1,10 +1,25 @@
+import type { Metadata } from "next";
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import Image from "next/image";
-import ContactForm from "@/components/ContactForm";
 import {
   FaMapMarkerAlt, FaPhone, FaEnvelope, FaClock,
   FaFacebook, FaLinkedin
 } from "react-icons/fa";
+
+const ContactForm = dynamic(() => import("@/components/ContactForm"), { loading: () => <div className="h-96 animate-pulse bg-gray-100 rounded-3xl" /> });
+
+export const metadata: Metadata = {
+  title: "Contact Us – KDIAE | Phone, Address & Directions",
+  description:
+    "Get in touch with KD Institute of Advance Education. Visit us at 13 Pandua-Kalna Road, Hooghly 712146, West Bengal, or call +91 74328 00090.",
+  alternates: { canonical: "https://kdiae.in/contact" },
+  openGraph: {
+    title: "Contact Us – KDIAE | Phone, Address & Directions",
+    description: "Contact KDIAE, Hooghly – address, phone, email, and a map to find us.",
+    url: "https://kdiae.in/contact",
+  },
+};
 
 export default function ContactPage() {
   return (
