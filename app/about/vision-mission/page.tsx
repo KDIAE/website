@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import AnimateIn from "@/components/AnimateIn";
@@ -8,6 +9,43 @@ import {
   FaBullseye, FaEye, FaLightbulb, FaHeart, FaLeaf, FaStar,
   FaShieldAlt, FaUsers, FaCheckCircle, FaAward, FaChevronRight,
 } from "react-icons/fa";
+
+export const metadata: Metadata = {
+  title: "Vision & Mission – Core Values | KDIAE",
+  description:
+    "Discover the vision, mission, and core values of KD Institute of Advance Education, Hooghly. We are committed to academic excellence, character building, holistic development, and making quality CBSE education accessible.",
+  keywords: [
+    "KDIAE vision",
+    "KDIAE mission",
+    "KDIAE core values",
+    "KD Institute vision mission",
+    "CBSE school values Hooghly",
+    "holistic education West Bengal",
+    "academic excellence KDIAE",
+  ],
+  alternates: { canonical: "https://kdiae.in/about/vision-mission" },
+  openGraph: {
+    title: "Vision & Mission – Core Values | KDIAE",
+    description:
+      "KD Institute of Advance Education's vision – excellence, character, and holistic development through quality CBSE education in Hooghly.",
+    url: "https://kdiae.in/about/vision-mission",
+    images: [
+      {
+        url: "/gallery/front_building.jpg",
+        width: 1200,
+        height: 630,
+        alt: "KDIAE Vision & Mission",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Vision & Mission – Core Values | KDIAE",
+    description:
+      "KD Institute of Advance Education's vision – excellence, character, and holistic development through quality CBSE education in Hooghly.",
+    images: ["/gallery/front_building.jpg"],
+  },
+};
 
 const missionPillars = [
   {

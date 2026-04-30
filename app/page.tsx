@@ -7,11 +7,37 @@ export const metadata: Metadata = {
   title: "KDIAE – Quality CBSE School in Hooghly, West Bengal",
   description:
     "KD Institute of Advance Education offers premium CBSE education from Nursery to Class VI in Hooghly, West Bengal. Admissions open for 2026–27. Safe campus, qualified faculty, activity-based learning.",
+  keywords: [
+    "CBSE school Hooghly",
+    "KD Institute of Advance Education",
+    "KDIAE",
+    "school in Hooghly West Bengal",
+    "admissions 2026 Hooghly",
+    "nursery to class VI CBSE",
+    "best school Hooghly",
+    "Pandua Kalna road school",
+    "primary school West Bengal",
+    "activity-based learning CBSE",
+  ],
   alternates: { canonical: "https://kdiae.in" },
   openGraph: {
     title: "KDIAE – Quality CBSE School in Hooghly, West Bengal",
     description: "Premium CBSE education from Nursery to Class VI. Admissions open 2026–27.",
     url: "https://kdiae.in",
+    images: [
+      {
+        url: "/gallery/front_building.jpg",
+        width: 1200,
+        height: 630,
+        alt: "KD Institute of Advance Education – School Campus",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "KDIAE – Quality CBSE School in Hooghly, West Bengal",
+    description: "Premium CBSE education from Nursery to Class VI. Admissions open 2026–27.",
+    images: ["/gallery/front_building.jpg"],
   },
 };
 import AnimateStagger from "@/components/AnimateStagger";

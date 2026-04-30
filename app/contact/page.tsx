@@ -13,11 +13,34 @@ export const metadata: Metadata = {
   title: "Contact Us – KDIAE | Phone, Address & Directions",
   description:
     "Get in touch with KD Institute of Advance Education. Visit us at 13 Pandua-Kalna Road, Hooghly 712146, West Bengal, or call +91 74328 00090.",
+  keywords: [
+    "contact KDIAE",
+    "KD Institute phone number",
+    "KDIAE address Hooghly",
+    "school contact Pandua Kalna Road",
+    "CBSE school contact West Bengal",
+    "info@kdiae.in",
+    "KDIAE directions map",
+  ],
   alternates: { canonical: "https://kdiae.in/contact" },
   openGraph: {
     title: "Contact Us – KDIAE | Phone, Address & Directions",
     description: "Contact KDIAE, Hooghly – address, phone, email, and a map to find us.",
     url: "https://kdiae.in/contact",
+    images: [
+      {
+        url: "/gallery/gal_1775935126_9381a0c1.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Contact KDIAE – KD Institute of Advance Education",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact Us – KDIAE | Phone, Address & Directions",
+    description: "Contact KDIAE, Hooghly – address, phone, email, and a map to find us.",
+    images: ["/gallery/gal_1775935126_9381a0c1.jpg"],
   },
 };
 

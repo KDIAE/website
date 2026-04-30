@@ -18,11 +18,34 @@ export const metadata: Metadata = {
   title: "Admissions 2026–27 – Apply Online | KDIAE",
   description:
     "Apply online for admissions at KD Institute of Advance Education for 2026–27. Open for Nursery to Class VI. Simple 6-step process, transparent fee structure.",
+  keywords: [
+    "KDIAE admissions 2026",
+    "apply CBSE school Hooghly",
+    "school admissions West Bengal",
+    "nursery admission Hooghly",
+    "KD Institute admission form",
+    "school enrolment 2026 Hooghly",
+    "CBSE school admission process",
+  ],
   alternates: { canonical: "https://kdiae.in/admissions" },
   openGraph: {
     title: "Admissions 2026–27 – Apply Online | KDIAE",
     description: "Admissions open for 2026–27 at KDIAE, Hooghly. Apply online for Nursery to Class VI.",
     url: "https://kdiae.in/admissions",
+    images: [
+      {
+        url: "/gallery/front_building.jpg",
+        width: 1200,
+        height: 630,
+        alt: "KDIAE Admissions 2026–27 – Apply Now",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Admissions 2026–27 – Apply Online | KDIAE",
+    description: "Admissions open for 2026–27 at KDIAE, Hooghly. Apply online for Nursery to Class VI.",
+    images: ["/gallery/front_building.jpg"],
   },
 };
 

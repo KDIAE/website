@@ -17,11 +17,34 @@ export const metadata: Metadata = {
   title: "About KDIAE – Our Story, Vision & Mission",
   description:
     "Learn about KD Institute of Advance Education – our founding story, vision, mission, and the passionate team behind our school in Hooghly, West Bengal.",
+  keywords: [
+    "about KDIAE",
+    "KD Institute history",
+    "CBSE school founded Hooghly",
+    "Purna Chandra Das Memorial Educational Trust",
+    "Dr Kalobaran Das",
+    "school story Hooghly West Bengal",
+    "KDIAE vision mission",
+  ],
   alternates: { canonical: "https://kdiae.in/about" },
   openGraph: {
     title: "About KDIAE – Our Story, Vision & Mission",
     description: "The story, vision and mission behind KDIAE – a CBSE school in Hooghly, West Bengal.",
     url: "https://kdiae.in/about",
+    images: [
+      {
+        url: "/gallery/front_building.jpg",
+        width: 1200,
+        height: 630,
+        alt: "KD Institute of Advance Education – About Us",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About KDIAE – Our Story, Vision & Mission",
+    description: "The story, vision and mission behind KDIAE – a CBSE school in Hooghly, West Bengal.",
+    images: ["/gallery/front_building.jpg"],
   },
 };
 

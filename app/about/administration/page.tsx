@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import AnimateIn from "@/components/AnimateIn";
@@ -5,6 +6,43 @@ import AnimateStagger from "@/components/AnimateStagger";
 import StaggerItem from "@/components/StaggerItem";
 import MarqueeStrip from "@/components/MarqueeStrip";
 import { FaChevronRight, FaUserTie } from "react-icons/fa";
+
+export const metadata: Metadata = {
+  title: "Administration – Leadership Team | KDIAE",
+  description:
+    "Meet the leadership and administrative team of KD Institute of Advance Education, Hooghly. Learn about our Chairman, Chief Advisor, Principal and governance structure that drives KDIAE's excellence.",
+  keywords: [
+    "KDIAE administration",
+    "KDIAE leadership team",
+    "KD Institute management",
+    "CBSE school administration Hooghly",
+    "school governance KDIAE",
+    "Dr Kalobaran Das chairman",
+    "Aneek Banerjee chief advisor KDIAE",
+  ],
+  alternates: { canonical: "https://kdiae.in/about/administration" },
+  openGraph: {
+    title: "Administration – Leadership Team | KDIAE",
+    description:
+      "Meet the leadership team governing KD Institute of Advance Education – Chairman, Advisors, and Principal in Hooghly, West Bengal.",
+    url: "https://kdiae.in/about/administration",
+    images: [
+      {
+        url: "/gallery/front_building.jpg",
+        width: 1200,
+        height: 630,
+        alt: "KDIAE Administration – Leadership Team",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Administration – Leadership Team | KDIAE",
+    description:
+      "Meet the leadership team governing KD Institute of Advance Education – Chairman, Advisors, and Principal in Hooghly, West Bengal.",
+    images: ["/gallery/front_building.jpg"],
+  },
+};
 
 const administration = [
   {

@@ -10,11 +10,33 @@ export const metadata: Metadata = {
   title: "Gallery – Campus Life at KDIAE",
   description:
     "Browse photos of life at KD Institute of Advance Education – events, academic activities, sports, and everyday campus moments in Hooghly, West Bengal.",
+  keywords: [
+    "KDIAE gallery",
+    "CBSE school photos Hooghly",
+    "KD Institute campus photos",
+    "school events gallery West Bengal",
+    "KDIAE opening ceremony",
+    "school life photos KDIAE",
+  ],
   alternates: { canonical: "https://kdiae.in/gallery" },
   openGraph: {
     title: "Gallery – Campus Life at KDIAE",
     description: "Photos from events and everyday life at KDIAE, Hooghly.",
     url: "https://kdiae.in/gallery",
+    images: [
+      {
+        url: "/gallery/gal_1774722698_b12ef32b.jpg",
+        width: 1200,
+        height: 630,
+        alt: "KDIAE Gallery – Campus Life",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Gallery – Campus Life at KDIAE",
+    description: "Photos from events and everyday life at KDIAE, Hooghly.",
+    images: ["/gallery/gal_1774722698_b12ef32b.jpg"],
   },
 };
 

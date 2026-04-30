@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import AnimateIn from "@/components/AnimateIn";
@@ -8,6 +9,42 @@ import {
   FaGraduationCap, FaHandsHelping, FaLeaf, FaUsers, FaArrowRight,
   FaBook, FaUserTie, FaChevronRight,
 } from "react-icons/fa";
+
+export const metadata: Metadata = {
+  title: "Our Team – Educators & Staff | KDIAE",
+  description:
+    "Meet the dedicated team of qualified CBSE-certified teachers, administrative staff, support personnel, and coaches who make KD Institute of Advance Education exceptional in Hooghly, West Bengal.",
+  keywords: [
+    "KDIAE teachers",
+    "KDIAE staff",
+    "CBSE certified educators Hooghly",
+    "KD Institute teaching staff",
+    "school faculty KDIAE",
+    "qualified teachers Hooghly",
+  ],
+  alternates: { canonical: "https://kdiae.in/about/team" },
+  openGraph: {
+    title: "Our Team – Educators & Staff | KDIAE",
+    description:
+      "Meet the passionate teachers and staff who bring excellence to KD Institute of Advance Education, Hooghly.",
+    url: "https://kdiae.in/about/team",
+    images: [
+      {
+        url: "/gallery/gal_1772650456_ba4dbe0a.jpg",
+        width: 1200,
+        height: 630,
+        alt: "KDIAE Team – Educators and Staff",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Our Team – Educators & Staff | KDIAE",
+    description:
+      "Meet the passionate teachers and staff who bring excellence to KD Institute of Advance Education, Hooghly.",
+    images: ["/gallery/gal_1772650456_ba4dbe0a.jpg"],
+  },
+};
 
 const ourTeam = [
   {

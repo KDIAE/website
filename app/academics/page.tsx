@@ -10,11 +10,35 @@ export const metadata: Metadata = {
   title: "Academics – CBSE Curriculum from Nursery to Class VI",
   description:
     "Explore KDIAE's CBSE-aligned academic programs for ages 3–11 across three stages: Early Childhood, Lower Primary, and Upper Primary. Smart classrooms, activity-based learning.",
+  keywords: [
+    "CBSE academics Hooghly",
+    "KDIAE curriculum",
+    "nursery CBSE school West Bengal",
+    "class VI CBSE school",
+    "early childhood education Hooghly",
+    "primary school CBSE West Bengal",
+    "smart classroom school Hooghly",
+    "activity-based learning CBSE",
+  ],
   alternates: { canonical: "https://kdiae.in/academics" },
   openGraph: {
     title: "Academics – CBSE Curriculum from Nursery to Class VI",
     description: "CBSE-aligned programs for ages 3–11 at KDIAE, Hooghly. Smart classrooms, qualified faculty.",
     url: "https://kdiae.in/academics",
+    images: [
+      {
+        url: "/gallery/gal_1772650456_ba4dbe0a.jpg",
+        width: 1200,
+        height: 630,
+        alt: "KDIAE Academics – CBSE Classroom",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Academics – CBSE Curriculum from Nursery to Class VI",
+    description: "CBSE-aligned programs for ages 3–11 at KDIAE, Hooghly. Smart classrooms, qualified faculty.",
+    images: ["/gallery/gal_1772650456_ba4dbe0a.jpg"],
   },
 };
 import {

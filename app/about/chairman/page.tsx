@@ -1,8 +1,45 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import AnimateIn from "@/components/AnimateIn";
 import MarqueeStrip from "@/components/MarqueeStrip";
 import { FaQuoteLeft, FaAward, FaUniversity, FaChevronRight } from "react-icons/fa";
+
+export const metadata: Metadata = {
+  title: "Chairman's Message – Dr. Kalobaran Das | KDIAE",
+  description:
+    "Read the inspiring message from Dr. Kalobaran Das, Founder & Chairman of KD Institute of Advance Education, Hooghly. Learn about his vision for quality CBSE education in rural West Bengal.",
+  keywords: [
+    "KDIAE chairman",
+    "Dr Kalobaran Das",
+    "KD Institute founder",
+    "CBSE school founder Hooghly",
+    "chairman message KDIAE",
+    "Purna Chandra Das Memorial Educational Trust",
+  ],
+  alternates: { canonical: "https://kdiae.in/about/chairman" },
+  openGraph: {
+    title: "Chairman's Message – Dr. Kalobaran Das | KDIAE",
+    description:
+      "Dr. Kalobaran Das – Founder & Chairman of KDIAE shares his vision for quality education in Hooghly, West Bengal.",
+    url: "https://kdiae.in/about/chairman",
+    images: [
+      {
+        url: "/chairman.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Dr. Kalobaran Das – Chairman, KDIAE",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Chairman's Message – Dr. Kalobaran Das | KDIAE",
+    description:
+      "Dr. Kalobaran Das – Founder & Chairman of KDIAE shares his vision for quality education in Hooghly, West Bengal.",
+    images: ["/chairman.jpg"],
+  },
+};
 
 export default function ChairmanPage() {
   return (

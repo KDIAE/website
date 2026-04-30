@@ -1,8 +1,45 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import AnimateIn from "@/components/AnimateIn";
 import MarqueeStrip from "@/components/MarqueeStrip";
 import { FaQuoteLeft, FaChevronRight, FaGraduationCap } from "react-icons/fa";
+
+export const metadata: Metadata = {
+  title: "Principal's Message – Priyanka Datta | KDIAE",
+  description:
+    "Read the inspiring words of guidance from the Principal and Vice Principal of KD Institute of Advance Education, Hooghly. Discover how KDIAE shapes young minds with purpose and care.",
+  keywords: [
+    "KDIAE principal",
+    "Priyanka Datta principal",
+    "principal message KDIAE",
+    "CBSE school principal Hooghly",
+    "KD Institute principal message",
+    "vice principal KDIAE",
+  ],
+  alternates: { canonical: "https://kdiae.in/about/principal" },
+  openGraph: {
+    title: "Principal's Message – Priyanka Datta | KDIAE",
+    description:
+      "Inspiring words from the Principal and Vice Principal of KDIAE, Hooghly – shaping young minds with purpose.",
+    url: "https://kdiae.in/about/principal",
+    images: [
+      {
+        url: "/gallery/gal_1772651361_806dbeb5.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Principal's Message – KDIAE",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Principal's Message – Priyanka Datta | KDIAE",
+    description:
+      "Inspiring words from the Principal and Vice Principal of KDIAE, Hooghly – shaping young minds with purpose.",
+    images: ["/gallery/gal_1772651361_806dbeb5.jpg"],
+  },
+};
 
 export default function PrincipalPage() {
   return (
