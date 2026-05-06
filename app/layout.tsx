@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import ScrollProgress from "@/components/ScrollProgress";
 import FloatingButtons from "@/components/FloatingButtons";
 import AdmissionPopup from "@/components/AdmissionPopup";
+import ConsoleLogger from "@/components/ConsoleLogger";
 
 const sourceSans3 = Source_Sans_3({
   variable: "--font-source-sans-3",
@@ -89,6 +90,7 @@ export default function RootLayout({
         <Footer />
         <FloatingButtons />
         <AdmissionPopup />
+        <ConsoleLogger />
       </body>
     </html>
   );

@@ -96,6 +96,12 @@ export default function Footer() {
         © 2026 KD Institute of Advance Education. All Rights Reserved. &nbsp;|&nbsp;{" "}
         <Link href="#" className="hover:text-[#FFCA2B]">Privacy Policy</Link> &nbsp;|&nbsp;{" "}
         <Link href="#" className="hover:text-[#FFCA2B]">Terms & Conditions</Link>
+        <span className="block mt-1.5 text-gray-500">
+          Developed by{" "}
+          <a href="https://autom.uk" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-[#FFCA2B] transition-colors duration-200">
+            Automuk
+          </a>
+        </span>
       </div>
     </footer>
   );
