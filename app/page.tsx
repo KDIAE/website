@@ -4,7 +4,7 @@ import Image from "next/image";
 import AnimateIn from "@/components/AnimateIn";
 
 export const metadata: Metadata = {
-  title: "KDIAE – Quality CBSE School in Hooghly, West Bengal",
+  title: "KD Institute of Advance Education – Quality CBSE School in Hooghly, West Bengal",
   description:
     "KD Institute of Advance Education offers premium CBSE education from Nursery to Class VI in Hooghly, West Bengal. Admissions open for 2026–27. Safe campus, qualified faculty, activity-based learning.",
   keywords: [

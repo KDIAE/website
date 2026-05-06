@@ -42,7 +42,7 @@ export default function MarqueeStrip({
     <div className={`overflow-hidden ${bgClassName} ${className}`}>
       <div ref={trackRef} className={`flex whitespace-nowrap will-change-transform ${textClassName}`}>
         {doubled.map((item, i) => (
-          <span key={i} className="inline-flex items-center gap-3 px-4 h-10">
+          <span key={i} className="inline-flex items-center gap-3 pr-4 h-10">
             {item}
             <span className="opacity-50">{separator}</span>
           </span>
