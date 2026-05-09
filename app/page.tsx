@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     url: "https://kdiae.in",
     images: [
       {
-        url: "/gallery/front_building.jpg",
+        url: "https://cdn.kdiae.in/front_building.jpg",
         width: 1200,
         height: 630,
         alt: "KD Institute of Advance Education – School Campus",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "KDIAE – Quality CBSE School in Hooghly, West Bengal",
     description: "Premium CBSE education from Nursery to Class VI. Admissions open 2026–27.",
-    images: ["/gallery/front_building.jpg"],
+    images: ["https://cdn.kdiae.in/front_building.jpg"],
   },
 };
 import AnimateStagger from "@/components/AnimateStagger";
@@ -93,7 +93,7 @@ export default function Home() {
         {/* Background image */}
         <div className="absolute inset-0">
           <Image
-            src="/gallery/front_building.jpg"
+            src="https://cdn.kdiae.in/front_building.jpg"
             alt="Students learning"
             fill
             className="object-cover object-center"
@@ -175,10 +175,10 @@ export default function Home() {
       <section className="py-0 overflow-hidden">
         <div className="flex gap-3 px-4 pb-6">
           {[
-            { src: "/gallery/gal_1772650456_ba4dbe0a.jpg", alt: "Classroom" },
-            { src: "/gallery/gal_1772651057_8640aa21.jpg", alt: "Students studying" },
-            { src: "/gallery/gal_1772651117_9829baa0.jpg", alt: "Group learning" },
-            { src: "/gallery/gal_1772651361_806dbeb5.jpg", alt: "School activities" },
+            { src: "https://cdn.kdiae.in/gallery/events/gal_1772650456_ba4dbe0a.jpg", alt: "Classroom" },
+            { src: "https://cdn.kdiae.in/gallery/events/gal_1772651057_8640aa21.jpg", alt: "Students studying" },
+            { src: "https://cdn.kdiae.in/gallery/events/gal_1772651117_9829baa0.jpg", alt: "Group learning" },
+            { src: "https://cdn.kdiae.in/gallery/events/gal_1772651361_806dbeb5.jpg", alt: "School activities" },
           ].map((img, i) => (
             <div
               key={img.alt}
@@ -200,7 +200,7 @@ export default function Home() {
               <div className="relative">
                 <div className="rounded-3xl overflow-hidden aspect-square relative shadow-2xl">
                   <Image
-                    src="/gallery/gal_1774722490_7e9cd133.jpg"
+                    src="https://cdn.kdiae.in/gallery/academic/gal_1774722490_7e9cd133.jpg"
                     alt="Happy school kids"
                     fill
                     className="object-cover"
@@ -375,11 +375,11 @@ export default function Home() {
           </AnimateIn>
           <AnimateStagger className="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[200px]" staggerDelay={0.07}>
             {[
-              { src: "/gallery/gal_1774722698_b12ef32b.jpg", alt: "Campus life", span: "md:col-span-2 md:row-span-2" },
-              { src: "/gallery/gal_1774722743_c5dd5b9e.jpg", alt: "Students" },
-              { src: "/gallery/gal_1774722781_8b2ce766.jpg", alt: "Learning" },
-              { src: "/gallery/gal_1774722812_d7048d8e.jpg", alt: "Library" },
-              { src: "/gallery/gal_1774723502_4f373141.jpg", alt: "Activity" },
+              { src: "https://cdn.kdiae.in/gallery/academic/gal_1774722698_b12ef32b.jpg", alt: "Campus life", span: "md:col-span-2 md:row-span-2" },
+              { src: "https://cdn.kdiae.in/gallery/academic/gal_1774722743_c5dd5b9e.jpg", alt: "Students" },
+              { src: "https://cdn.kdiae.in/gallery/academic/gal_1774722781_8b2ce766.jpg", alt: "Learning" },
+              { src: "https://cdn.kdiae.in/gallery/academic/gal_1774722812_d7048d8e.jpg", alt: "Library" },
+              { src: "https://cdn.kdiae.in/gallery/academic/gal_1774723502_4f373141.jpg", alt: "Activity" },
             ].map((img) => (
               <StaggerItem key={img.alt} className={`${img.span || ""} rounded-2xl overflow-hidden relative group`}>
                 <Image src={img.src} alt={img.alt} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />

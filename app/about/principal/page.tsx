@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     url: "https://kdiae.in/about/principal",
     images: [
       {
-        url: "/gallery/gal_1772651361_806dbeb5.jpg",
+        url: "https://cdn.kdiae.in/gallery/events/gal_1772651361_806dbeb5.jpg",
         width: 1200,
         height: 630,
         alt: "Principal's Message – KDIAE",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     title: "Principal's Message – Priyanka Datta | KDIAE",
     description:
       "Inspiring words from the Principal and Vice Principal of KDIAE, Hooghly – shaping young minds with purpose.",
-    images: ["/gallery/gal_1772651361_806dbeb5.jpg"],
+    images: ["https://cdn.kdiae.in/gallery/events/gal_1772651361_806dbeb5.jpg"],
   },
 };
 
@@ -47,7 +47,7 @@ export default function PrincipalPage() {
       {/* Hero */}
       <section className="bg-[#212529] text-white py-20 relative overflow-hidden">
         <div className="absolute inset-0">
-          <Image src="/gallery/gal_1772651361_806dbeb5.jpg" alt="Principal" fill className="object-cover object-center opacity-20" />
+          <Image src="https://cdn.kdiae.in/gallery/events/gal_1772651361_806dbeb5.jpg" alt="Principal" fill className="object-cover object-center opacity-20" />
         </div>
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
           <div className="absolute top-0 right-0 w-96 h-96 bg-[#FFCA2B]/10 rounded-full blur-3xl translate-x-1/3 -translate-y-1/3 animate-pulse" />
@@ -87,7 +87,7 @@ export default function PrincipalPage() {
             <div className="bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 md:flex mb-14">
               <div className="md:w-72 flex-shrink-0 bg-[#f0f7ff] flex flex-col items-center justify-center p-10 gap-5">
                 <div className="w-40 h-40 rounded-2xl overflow-hidden border-4 border-blue-200 shadow-lg relative">
-                  <Image src="/blank_person.png" alt="Principal" fill className="object-cover" sizes="160px" />
+                  <Image src="https://cdn.kdiae.in/blank_person.png" alt="Principal" fill className="object-cover" sizes="160px" />
                 </div>
                 <div className="text-center">
                   <div className="text-lg font-black text-[#212529]">Principal</div>
@@ -126,7 +126,7 @@ export default function PrincipalPage() {
             <div className="bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 md:flex">
               <div className="md:w-72 flex-shrink-0 bg-yellow-50 flex flex-col items-center justify-center p-10 gap-5">
                 <div className="w-40 h-40 rounded-2xl overflow-hidden border-4 border-yellow-300 shadow-lg relative">
-                  <Image src="/vice_Principal.jpg" alt="Priyanka Datta" fill className="object-cover" sizes="160px" />
+                  <Image src="https://cdn.kdiae.in/vice_Principal.jpg" alt="Priyanka Datta" fill className="object-cover" sizes="160px" />
                 </div>
                 <div className="text-center">
                   <div className="text-lg font-black text-[#212529]">Priyanka Datta</div>

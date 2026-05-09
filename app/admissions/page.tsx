@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     url: "https://kdiae.in/admissions",
     images: [
       {
-        url: "/gallery/front_building.jpg",
+        url: "https://cdn.kdiae.in/front_building.jpg",
         width: 1200,
         height: 630,
         alt: "KDIAE Admissions 2026–27 – Apply Now",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Admissions 2026–27 – Apply Online | KDIAE",
     description: "Admissions open for 2026–27 at KDIAE, Hooghly. Apply online for Nursery to Class VI.",
-    images: ["/gallery/front_building.jpg"],
+    images: ["https://cdn.kdiae.in/front_building.jpg"],
   },
 };
 
@@ -87,7 +87,7 @@ export default function AdmissionsPage() {
       {/* Hero */}
       <section className="relative bg-[#212529] text-white overflow-hidden py-24 min-h-[70vh] flex items-center">
         <div className="absolute inset-0">
-          <Image src="/gallery/gal_1775935126_9381a0c1.jpg" alt="Admissions" fill className="object-cover opacity-15" />
+          <Image src="https://cdn.kdiae.in/gallery/events/gal_1775935126_9381a0c1.jpg" alt="Admissions" fill className="object-cover opacity-15" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#212529]/95 to-[#212529]/60" />
         </div>
         {/* Blobs */}

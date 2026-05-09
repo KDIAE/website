@@ -52,7 +52,7 @@ export default function AdmissionPopup() {
             {/* Image */}
             <div className="relative w-full h-36 overflow-hidden">
               <Image
-                src="/gallery/gal_1772651309_2924a298.jpg"
+                src="https://cdn.kdiae.in/gallery/events/gal_1772651309_2924a298.jpg"
                 alt="KD Institute"
                 fill
                 className="object-cover"

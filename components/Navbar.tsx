@@ -82,7 +82,7 @@ export default function Navbar() {
           <Link href="/" className="flex items-center gap-2 group">
             <div className="flex items-center gap-2">
               <Image
-                src="/logo.png"
+                src="https://cdn.kdiae.in/logo.png"
                 alt="KDIAE Logo"
                 width={48}
                 height={48}

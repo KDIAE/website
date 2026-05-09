@@ -6,6 +6,53 @@ import type { GalleryItem } from "@/components/GalleryClient";
 
 const GalleryClient = dynamic(() => import("@/components/GalleryClient"), { loading: () => <div className="min-h-[600px] animate-pulse bg-gray-100 rounded-3xl" /> });
 
+export const revalidate = 60; // revalidate every 60 seconds
+
+async function fetchGalleryData(): Promise<{ items: GalleryItem[]; categories: string[] }> {
+  const backendUrl = process.env.BACKEND_URL;
+  if (!backendUrl) {
+    return { items: [], categories: ["All"] };
+  }
+
+  try {
+    const res = await fetch(`${backendUrl}/api/gallery/public?limit=1000`, {
+      next: { revalidate: 60 },
+    });
+    if (!res.ok) throw new Error("Failed to fetch gallery");
+
+    const data: Array<{
+      id: string;
+      key: string;
+      url: string;
+      category: string;
+      title: string;
+      subtitle: string;
+      uploaded_at: string;
+    }> = await res.json();
+
+    const items: GalleryItem[] = data.map((d) => ({
+      src: d.url,
+      category: d.category,
+      title: d.title,
+      subtitle: d.subtitle,
+    }));
+
+    // Build unique ordered category list
+    const seen = new Set<string>();
+    const categories: string[] = ["All"];
+    for (const item of items) {
+      if (!seen.has(item.category)) {
+        seen.add(item.category);
+        categories.push(item.category);
+      }
+    }
+
+    return { items, categories };
+  } catch {
+    return { items: [], categories: ["All"] };
+  }
+}
+
 export const metadata: Metadata = {
   title: "Gallery – Campus Life at KDIAE",
   description:
@@ -25,7 +72,7 @@ export const metadata: Metadata = {
     url: "https://kdiae.in/gallery",
     images: [
       {
-        url: "/gallery/gal_1774722698_b12ef32b.jpg",
+        url: "https://cdn.kdiae.in/gallery/gal_1774722698_b12ef32b.jpg",
         width: 1200,
         height: 630,
         alt: "KDIAE Gallery – Campus Life",
@@ -36,57 +83,20 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Gallery – Campus Life at KDIAE",
     description: "Photos from events and everyday life at KDIAE, Hooghly.",
-    images: ["/gallery/gal_1774722698_b12ef32b.jpg"],
+    images: ["https://cdn.kdiae.in/gallery/gal_1774722698_b12ef32b.jpg"],
   },
 };
 
-const categories = ["All", "Events", "Academic"];
-
-const galleryItems: GalleryItem[] = [
-  { src: "/gallery/gal_1776151763_1923ff19.jpg", category: "Events",   title: "Opening Ceremony of KDIAE",                              subtitle: "Opening Ceremony of KDIAE" },
-  { src: "/gallery/gal_1776151745_a8189939.jpg", category: "Events",   title: "Opening Ceremony of KDIAE",                              subtitle: "Opening Ceremony of KDIAE" },
-  { src: "/gallery/gal_1776151722_546546cf.jpg", category: "Events",   title: "Opening Ceremony of KDIAE",                              subtitle: "Opening Ceremony of KDIAE" },
-  { src: "/gallery/gal_1776151687_007c9992.jpg", category: "Events",   title: "Opening Ceremony of KDIAE",                              subtitle: "Opening Ceremony of KDIAE" },
-  { src: "/gallery/gal_1775935194_53829fe6.jpg", category: "Events",   title: "Opening Ceremony of KDIAE",                              subtitle: "Opening Ceremony of KDIAE" },
-  { src: "/gallery/gal_1775935165_dfedb511.jpg", category: "Events",   title: "Opening Ceremony of KDIAE",                              subtitle: "Opening Ceremony of KDIAE" },
-  { src: "/gallery/gal_1775935144_bc5ea7d3.jpg", category: "Events",   title: "Opening Ceremony of KDIAE",                              subtitle: "Opening Ceremony of KDIAE" },
-  { src: "/gallery/gal_1775935126_9381a0c1.jpg", category: "Events",   title: "Opening Ceremony of KDIAE",                              subtitle: "Opening Ceremony of KDIAE" },
-  { src: "/gallery/gal_1775935105_c590a887.jpg", category: "Events",   title: "Opening Ceremony of KDIAE",                              subtitle: "Opening Ceremony of KDIAE" },
-  { src: "/gallery/gal_1775935070_0a16f27d.jpg", category: "Events",   title: "Opening Ceremony of KDIAE",                              subtitle: "Opening Ceremony of KDIAE" },
-  { src: "/gallery/gal_1775935050_860bfbb5.jpg", category: "Events",   title: "Opening Ceremony of KDIAE",                              subtitle: "Opening Ceremony of KDIAE" },
-  { src: "/gallery/gal_1775935028_94f1ed21.jpg", category: "Events",   title: "Opening Ceremony of KDIAE",                              subtitle: "Opening Ceremony of KDIAE" },
-  { src: "/gallery/gal_1775935004_521eb65a.jpg", category: "Events",   title: "Opening Ceremony of KDIAE",                              subtitle: "Opening Ceremony of KDIAE" },
-  { src: "/gallery/gal_1775934962_5425cc80.jpg", category: "Events",   title: "Opening Ceremony of KDIAE",                              subtitle: "Opening Ceremony of KDIAE" },
-  { src: "/gallery/gal_1775934940_fac1ebc7.jpg", category: "Events",   title: "Opening Ceremony of KDIAE",                              subtitle: "Opening Ceremony of KDIAE" },
-  { src: "/gallery/gal_1775934902_3b5684ff.jpg", category: "Events",   title: "Opening Ceremony of KDIAE",                              subtitle: "Opening Ceremony of KDIAE" },
-  { src: "/gallery/gal_1775934850_ea96faf6.jpg", category: "Events",   title: "Opening Ceremony of KDIAE",                              subtitle: "Opening Ceremony of KDIAE" },
-  { src: "/gallery/gal_1775934832_205169d2.jpg", category: "Events",   title: "Opening Ceremony of KDIAE",                              subtitle: "Opening Ceremony of KDIAE" },
-  { src: "/gallery/gal_1775934797_a1e0c086.jpg", category: "Events",   title: "Opening Ceremony of KDIAE",                              subtitle: "Opening Ceremony of KDIAE" },
-  { src: "/gallery/gal_1775934779_3caa59db.jpg", category: "Events",   title: "Opening Ceremony of KDIAE",                              subtitle: "Opening Ceremony of KDIAE" },
-  { src: "/gallery/gal_1775934744_161e22d4.jpg", category: "Events",   title: "Opening Ceremony of KDIAE",                              subtitle: "Opening Ceremony of KDIAE" },
-  { src: "/gallery/gal_1774723502_4f373141.jpg", category: "Academic", title: "Demo Class @ KDIAE",                                     subtitle: "Demo Class @ KDIAE" },
-  { src: "/gallery/gal_1774722812_d7048d8e.jpg", category: "Academic", title: "Demo Class @ KDIAE",                                     subtitle: "Demo Class @ KDIAE" },
-  { src: "/gallery/gal_1774722781_8b2ce766.jpg", category: "Academic", title: "Demo Class @ KDIAE",                                     subtitle: "Demo Class @ KDIAE" },
-  { src: "/gallery/gal_1774722743_c5dd5b9e.jpg", category: "Academic", title: "Demo Class @ KDIAE",                                     subtitle: "Demo Class @ KDIAE" },
-  { src: "/gallery/gal_1774722698_b12ef32b.jpg", category: "Academic", title: "Demo Class @ KDIAE",                                     subtitle: "Demo Class @ KDIAE" },
-  { src: "/gallery/gal_1774722490_7e9cd133.jpg", category: "Academic", title: "Demo Class @ KDIAE",                                     subtitle: "Demo Class @KDIAE" },
-  { src: "/gallery/gal_1772651309_2924a298.jpg", category: "Events",   title: "Drawing competition at KD INSTITUTE OF ADVANCE EDUCATION", subtitle: "Drawing competition at KDIAE @01-03-2026" },
-  { src: "/gallery/gal_1772651057_8640aa21.jpg", category: "Events",   title: "Drawing competition at KD INSTITUTE OF ADVANCE EDUCATION", subtitle: "Drawing competition at KDIAE @01-03-2026" },
-  { src: "/gallery/gal_1772651117_9829baa0.jpg", category: "Events",   title: "Drawing competition at KD INSTITUTE OF ADVANCE EDUCATION", subtitle: "Respected Chairman @Drawing competition at KDIAE" },
-  { src: "/gallery/gal_1772650456_ba4dbe0a.jpg", category: "Events",   title: "Drawing competition at KD INSTITUTE OF ADVANCE EDUCATION", subtitle: "Drawing competition at KDIAE @1-03-2026" },
-  { src: "/gallery/gal_1772651361_806dbeb5.jpg", category: "Events",   title: "Drawing competition at KD INSTITUTE OF ADVANCE EDUCATION", subtitle: "Respected Chairman @Drawing competition at KDIAE" },
-  { src: "/gallery/gal_1772651412_adb3b66e.jpg", category: "Events",   title: "Drawing competition at KD INSTITUTE OF ADVANCE EDUCATION", subtitle: "Respected Chairman @Drawing competition at KDIAE" },
-];
-
 const ITEMS_PER_PAGE = 12;
 
-export default function GalleryPage() {
+export default async function GalleryPage() {
+  const { items: galleryItems, categories } = await fetchGalleryData();
   return (
     <>
       {/* Header */}
       <section className="bg-[#212529] text-white py-16 relative overflow-hidden">
         <div className="absolute inset-0">
-          <Image src="/gallery/gal_1775935050_860bfbb5.jpg" alt="Gallery" fill className="object-cover object-center opacity-20" />
+          <Image src="https://cdn.kdiae.in/gallery/events/gal_1775935050_860bfbb5.jpg" alt="Gallery" fill className="object-cover object-center opacity-20" />
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 text-center">
           <span className="text-[#FFCA2B] uppercase text-sm font-semibold tracking-widest">Gallery</span>

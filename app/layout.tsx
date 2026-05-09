@@ -57,7 +57,7 @@ export const metadata: Metadata = {
       "A nurturing CBSE school in Hooghly, West Bengal offering quality education from Nursery to Class VI. Admissions open for 2026–27.",
     images: [
       {
-        url: "/gallery/front_building.jpg",
+        url: "https://cdn.kdiae.in/front_building.jpg",
         width: 1200,
         height: 630,
         alt: "KD Institute of Advance Education – School Campus",
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
     title: "KD Institute of Advance Education | CBSE School in Hooghly",
     description:
       "A nurturing CBSE school in Hooghly, West Bengal. Admissions open for 2026–27.",
-    images: ["/gallery/front_building.jpg"],
+    images: ["https://cdn.kdiae.in/front_building.jpg"],
   },
   verification: {
     google: "",

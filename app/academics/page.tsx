@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     url: "https://kdiae.in/academics",
     images: [
       {
-        url: "/gallery/gal_1772650456_ba4dbe0a.jpg",
+        url: "https://cdn.kdiae.in/gallery/events/gal_1772650456_ba4dbe0a.jpg",
         width: 1200,
         height: 630,
         alt: "KDIAE Academics – CBSE Classroom",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Academics – CBSE Curriculum from Nursery to Class VI",
     description: "CBSE-aligned programs for ages 3–11 at KDIAE, Hooghly. Smart classrooms, qualified faculty.",
-    images: ["/gallery/gal_1772650456_ba4dbe0a.jpg"],
+    images: ["https://cdn.kdiae.in/gallery/events/gal_1772650456_ba4dbe0a.jpg"],
   },
 };
 import {
@@ -106,7 +106,7 @@ export default function AcademicsPage() {
       {/* ── HERO ── */}
       <section className="bg-[#212529] text-white py-24 overflow-hidden relative">
         <div className="absolute inset-0">
-          <Image src="/gallery/gal_1775934779_3caa59db.jpg" alt="Academics" fill className="object-cover object-center opacity-20" />
+          <Image src="https://cdn.kdiae.in/gallery/events/gal_1775934779_3caa59db.jpg" alt="Academics" fill className="object-cover object-center opacity-20" />
         </div>
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
           <div className="absolute -top-24 -right-24 w-96 h-96 bg-[#007BFF]/15 rounded-full blur-3xl" />

@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     url: "https://kdiae.in/about/administration",
     images: [
       {
-        url: "/gallery/front_building.jpg",
+        url: "https://cdn.kdiae.in/front_building.jpg",
         width: 1200,
         height: 630,
         alt: "KDIAE Administration – Leadership Team",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     title: "Administration – Leadership Team | KDIAE",
     description:
       "Meet the leadership team governing KD Institute of Advance Education – Chairman, Advisors, and Principal in Hooghly, West Bengal.",
-    images: ["/gallery/front_building.jpg"],
+    images: ["https://cdn.kdiae.in/front_building.jpg"],
   },
 };
 
@@ -48,28 +48,28 @@ const administration = [
   {
     name: "Dr. Kalobaran Das",
     role: "Chairman",
-    image: "/chairman.jpg",
+    image: "https://cdn.kdiae.in/chairman.jpg",
     desc: "Founder & visionary with over 20 years in education as Professor and Principal. Former researcher at Jadavpur University. Established KDIAE in honour of his father, Late Purna Chandra Das.",
     href: "/about/chairman",
   },
   {
     name: "Aneek Banerjee",
     role: "Chief Advisor",
-    image: "/chief_advisor.jpg",
+    image: "https://cdn.kdiae.in/chief_advisor.jpg",
     desc: "Strategic advisor providing guidance on institutional development, governance, and educational policy.",
     href: null,
   },
   {
     name: "Principal",
     role: "Principal",
-    image: "/blank_person.png",
+    image: "https://cdn.kdiae.in/blank_person.png",
     desc: "Academic head committed to nurturing a culture of curiosity, excellence, and purposeful learning.",
     href: "/about/principal",
   },
   {
     name: "Priyanka Datta",
     role: "Vice Principal",
-    image: "/vice_Principal.jpg",
+    image: "https://cdn.kdiae.in/vice_Principal.jpg",
     desc: "Dedicated to holistic education guided by core values of Courage, Compassion, Equality, and Integrity.",
     href: "/about/principal",
   },
@@ -81,7 +81,7 @@ export default function AdministrationPage() {
       {/* Hero */}
       <section className="bg-[#212529] text-white py-20 relative overflow-hidden">
         <div className="absolute inset-0">
-          <Image src="/gallery/gal_1772650456_ba4dbe0a.jpg" alt="Administration" fill className="object-cover object-center opacity-20" />
+          <Image src="https://cdn.kdiae.in/gallery/events/gal_1772650456_ba4dbe0a.jpg" alt="Administration" fill className="object-cover object-center opacity-20" />
         </div>
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
           <div className="absolute top-0 right-0 w-96 h-96 bg-[#FFCA2B]/10 rounded-full blur-3xl translate-x-1/3 -translate-y-1/3 animate-pulse" />

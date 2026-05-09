@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     url: "https://kdiae.in/about/team",
     images: [
       {
-        url: "/gallery/gal_1772650456_ba4dbe0a.jpg",
+        url: "https://cdn.kdiae.in/gallery/events/gal_1772650456_ba4dbe0a.jpg",
         width: 1200,
         height: 630,
         alt: "KDIAE Team – Educators and Staff",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     title: "Our Team – Educators & Staff | KDIAE",
     description:
       "Meet the passionate teachers and staff who bring excellence to KD Institute of Advance Education, Hooghly.",
-    images: ["/gallery/gal_1772650456_ba4dbe0a.jpg"],
+    images: ["https://cdn.kdiae.in/gallery/events/gal_1772650456_ba4dbe0a.jpg"],
   },
 };
 
@@ -109,7 +109,7 @@ export default function TeamPage() {
       {/* Hero */}
       <section className="bg-[#212529] text-white py-20 relative overflow-hidden">
         <div className="absolute inset-0">
-          <Image src="/gallery/gal_1774722743_c5dd5b9e.jpg" alt="Our Team" fill className="object-cover object-center opacity-20" />
+          <Image src="https://cdn.kdiae.in/gallery/academic/gal_1774722743_c5dd5b9e.jpg" alt="Our Team" fill className="object-cover object-center opacity-20" />
         </div>
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
           <div className="absolute top-0 right-0 w-96 h-96 bg-[#FFCA2B]/10 rounded-full blur-3xl translate-x-1/3 -translate-y-1/3 animate-pulse" />

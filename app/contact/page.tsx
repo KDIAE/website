@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     url: "https://kdiae.in/contact",
     images: [
       {
-        url: "/gallery/gal_1775935126_9381a0c1.jpg",
+        url: "https://cdn.kdiae.in/gallery/events/gal_1775935126_9381a0c1.jpg",
         width: 1200,
         height: 630,
         alt: "Contact KDIAE – KD Institute of Advance Education",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Contact Us – KDIAE | Phone, Address & Directions",
     description: "Contact KDIAE, Hooghly – address, phone, email, and a map to find us.",
-    images: ["/gallery/gal_1775935126_9381a0c1.jpg"],
+    images: ["https://cdn.kdiae.in/gallery/events/gal_1775935126_9381a0c1.jpg"],
   },
 };
 
@@ -50,7 +50,7 @@ export default function ContactPage() {
       {/* Header */}
       <section className="bg-[#212529] text-white py-16 relative overflow-hidden">
         <div className="absolute inset-0">
-          <Image src="/gallery/gal_1775935126_9381a0c1.jpg" alt="Contact" fill className="object-cover object-center opacity-20" />
+          <Image src="https://cdn.kdiae.in/gallery/events/gal_1775935126_9381a0c1.jpg" alt="Contact" fill className="object-cover object-center opacity-20" />
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 text-center">
           <span className="text-[#FFCA2B] uppercase text-sm font-semibold tracking-widest">Contact</span>
