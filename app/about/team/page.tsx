@@ -46,6 +46,143 @@ export const metadata: Metadata = {
   },
 };
 
+const teachers = [
+  {
+    name: "Priyanka Datta",
+    role: "Vice Principal",
+    qualifications: "BSc. – Biotechnology, MSc. – Biotechnology, BEd.",
+    image: "https://cdn.kdiae.in/cdn-cgi/image/format=webp,quality=80,width=800/teaching_faculty/Priyanka_Datta.png",
+  },
+  {
+    name: "Kingshuk Mukherjee",
+    role: "Teacher",
+    qualifications: "BA – English, MA – History, D.El.Ed",
+    image: "https://cdn.kdiae.in/cdn-cgi/image/format=webp,quality=80,width=800/teaching_faculty/Kingshuk_Mukherjee.JPG",
+  },
+  {
+    name: "Sanchita Chatterjee",
+    role: "Teacher",
+    qualifications: "MA – Bengali, B.Ed",
+    image: "https://cdn.kdiae.in/cdn-cgi/image/format=webp,quality=80,width=800/teaching_faculty/Sanchita_Chatterjee.png",
+  },
+  {
+    name: "Maitrayee Bhattacharya",
+    role: "Teacher",
+    qualifications: "MA – Sanskrit (Montessori-Trained)",
+    image: "https://cdn.kdiae.in/cdn-cgi/image/format=webp,quality=80,width=800/teaching_faculty/Maitrayee_Bhattacharya.png",
+  },
+  {
+    name: "Saswati Roy",
+    role: "Teacher",
+    qualifications: "MA, B.Ed",
+    image: "https://cdn.kdiae.in/cdn-cgi/image/format=webp,quality=80,width=800/teaching_faculty/Saswati_Roy.JPG",
+  },
+  {
+    name: "Paromita Banerjee",
+    role: "Teacher",
+    qualifications: "B.Sc Botany, M.Sc Environmental Biotechnology, B.Ed",
+    image: "https://cdn.kdiae.in/cdn-cgi/image/format=webp,quality=80,width=800/teaching_faculty/Paromita_Banerjee.png",
+  },
+  {
+    name: "Trayedipa Dutta",
+    role: "Teacher",
+    qualifications: "M.Sc Botany (Specialization Microbiology), B.Ed",
+    image: "https://cdn.kdiae.in/cdn-cgi/image/format=webp,quality=80,width=800/teaching_faculty/Trayedipa_Dutta.png",
+  },
+  {
+    name: "Rohit Kullu",
+    role: "Teacher",
+    qualifications: "B.Com (Accounting & Finance), Dip in Computer Application",
+    image: "https://cdn.kdiae.in/cdn-cgi/image/format=webp,quality=80,width=800/teaching_faculty/Rohit_Kullu.JPG",
+  },
+  {
+    name: "Abir Kumar Chanda",
+    role: "Teacher",
+    qualifications: "B.Sc Mathematics, B.Ed",
+    image: "https://cdn.kdiae.in/cdn-cgi/image/format=webp,quality=80,width=800/teaching_faculty/Abir_Kumar_Chanda.JPG",
+  },
+  {
+    name: "Juhi Khatun",
+    role: "Teacher",
+    qualifications: "MA Bengali, M.T.T, D.El.Ed",
+    image: "https://cdn.kdiae.in/cdn-cgi/image/format=webp,quality=80,width=800/teaching_faculty/Juhi_Khatun.JPG",
+  },
+  {
+    name: "Maya Ghosh",
+    role: "Teacher",
+    qualifications: "B.Com (Accountancy), Dip in Computer & Digital Marketing",
+    image: "https://cdn.kdiae.in/cdn-cgi/image/format=webp,quality=80,width=800/teaching_faculty/Maya_Ghosh.JPG",
+  },
+  {
+    name: "Smritikana Ghosh",
+    role: "Teacher",
+    qualifications: "Abacus Trainer & Dance Instructor",
+    image: "https://cdn.kdiae.in/cdn-cgi/image/format=webp,quality=80,width=800/teaching_faculty/Smritikana_Ghosh.png",
+  },
+];
+
+const BLANK = "https://cdn.kdiae.in/blank_person.png";
+
+const adminStaff = [
+  {
+    name: "Piyali Ghosh",
+    role: "Counsellor & Office-in-Charge",
+    qualifications: "MA (Bengali), B.Ed, B.Lib.I.Sc.",
+    image: "https://cdn.kdiae.in/cdn-cgi/image/format=webp,quality=80,width=800/blank_person_female.png",
+  },
+  {
+    name: "Sathi Kat",
+    role: "Inventory-in-Charge",
+    qualifications: "BA., D.El.Ed",
+    image: "https://cdn.kdiae.in/cdn-cgi/image/format=webp,quality=80,width=800/blank_person_female.png",
+  },
+  {
+    name: "Sangita Goswami",
+    role: "Marketing Team Member",
+    qualifications: "MA (Philosophy), B.Ed",
+    image: "https://cdn.kdiae.in/cdn-cgi/image/format=webp,quality=80,width=800/blank_person_female.png",
+  },
+];
+
+const supportStaff = [
+  {
+    name: "Niloy Kumar Das",
+    role: "Manager & Site-in-Charge",
+    qualifications: "",
+    image: BLANK,
+  },
+  {
+    name: "Baidyanath Hembram",
+    role: "Driver",
+    qualifications: "",
+    image: BLANK,
+  },
+  {
+    name: "Lalon Bag",
+    role: "Driver",
+    qualifications: "",
+    image: BLANK,
+  },
+  {
+    name: "Bharat Das",
+    role: "Driver",
+    qualifications: "",
+    image: BLANK,
+  },
+  {
+    name: "Amala Rai",
+    role: "Class Aunty",
+    qualifications: "",
+    image: "https://cdn.kdiae.in/cdn-cgi/image/format=webp,quality=80,width=800/blank_person_female.png",
+  },
+  {
+    name: "Aparna Lohar",
+    role: "Class Aunty",
+    qualifications: "",
+    image: "https://cdn.kdiae.in/cdn-cgi/image/format=webp,quality=80,width=800/blank_person_female.png",
+  },
+];
+
 const ourTeam = [
   {
     name: "Teaching Faculty",
@@ -107,9 +244,9 @@ export default function TeamPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-[#212529] text-white py-20 relative overflow-hidden">
+      <section className="bg-[#212529] text-white py-24 overflow-hidden relative">
         <div className="absolute inset-0">
-          <Image src="https://cdn.kdiae.in/gallery/academic/gal_1774722743_c5dd5b9e.jpg" alt="Our Team" fill className="object-cover object-center opacity-20" />
+          <Image src="https://cdn.kdiae.in/gallery/events/gal_1775935050_860bfbb5.jpg" alt="Our Team" fill className="object-cover object-center opacity-20" />
         </div>
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
           <div className="absolute top-0 right-0 w-96 h-96 bg-[#FFCA2B]/10 rounded-full blur-3xl translate-x-1/3 -translate-y-1/3 animate-pulse" />
@@ -118,20 +255,23 @@ export default function TeamPage() {
           <div className="absolute bottom-10 left-1/3 opacity-10 animate-float-slow"><FaGraduationCap size={44} className="text-blue-200" /></div>
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 text-center">
-          <AnimateIn direction="up" delay={0.2}>
-            <h1 className="text-4xl md:text-5xl font-black mt-1 mb-4">Our Team</h1>
+          <AnimateIn direction="down" delay={0.05}>
+            <span className="inline-block bg-[#FFCA2B]/20 text-[#FFCA2B] font-bold text-xs uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">Our Team</span>
           </AnimateIn>
-          <AnimateIn direction="up" delay={0.3}>
-            <p className="text-blue-200 max-w-2xl mx-auto text-lg leading-relaxed">
+          <AnimateIn direction="up" delay={0.15}>
+            <h1 className="text-5xl md:text-6xl font-black mb-5 leading-tight">Our Team</h1>
+          </AnimateIn>
+          <AnimateIn direction="up" delay={0.25}>
+            <p className="text-gray-400 max-w-2xl mx-auto text-lg leading-relaxed">
               The passionate and dedicated professionals who make KDIAE a world-class learning environment.
             </p>
           </AnimateIn>
-          <AnimateIn direction="fade" delay={0.4}>
-            <div className="flex justify-center items-center gap-2 mt-5 text-sm text-blue-300">
+          <AnimateIn direction="up" delay={0.35}>
+            <div className="flex justify-center gap-2 mt-8 text-sm text-gray-500">
               <Link href="/" className="hover:text-white transition-colors">Home</Link>
-              <FaChevronRight size={10} />
+              <span>/</span>
               <Link href="/about" className="hover:text-white transition-colors">About Us</Link>
-              <FaChevronRight size={10} />
+              <span>/</span>
               <span className="text-white font-semibold">Our Team</span>
             </div>
           </AnimateIn>
@@ -142,23 +282,112 @@ export default function TeamPage() {
 
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <AnimateIn direction="up" className="text-center mb-14">
-            <h2 className="text-3xl md:text-4xl font-black text-[#212529] mt-2">The People Behind KDIAE</h2>
+          {/* Teachers Grid */}
+          <AnimateIn direction="up" className="text-center mt-10 md:mb-20 mb-10">
+            <h2 className="text-3xl md:text-4xl font-black text-[#212529] mt-2">Meet Our Teachers</h2>
             <p className="text-gray-500 mt-3 max-w-xl mx-auto">
-              A diverse team working together to deliver a world-class education experience for every student.
+              Qualified, passionate educators dedicated to nurturing every student's potential.
             </p>
           </AnimateIn>
 
-          <AnimateStagger className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" staggerDelay={0.1}>
-            {ourTeam.map((t) => (
+          <AnimateStagger className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6" staggerDelay={0.07}>
+            {teachers.map((t) => (
               <StaggerItem key={t.name}>
-                <div className={`${t.bg} rounded-2xl p-8 border border-transparent hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group h-full`}>
-                  <div className={`w-16 h-16 rounded-2xl ${t.ringColor} group-hover:scale-110 flex items-center justify-center mb-5 transition-transform duration-300`}>
-                    <t.icon size={28} className={t.iconColor} />
+                <div className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group h-full flex flex-col">
+                  {/* Photo area */}
+                  <div className="relative w-full aspect-[3/4] bg-gradient-to-br from-[#FFCA2B]/30 to-gray-100 overflow-hidden">
+                    {t.image ? (
+                      <Image
+                        unoptimized
+                        src={t.image}
+                        alt={t.name}
+                        fill
+                        className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                      />
+                    ) : (
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="w-24 h-24 rounded-full bg-[#FFCA2B]/30 flex items-center justify-center">
+                          <FaGraduationCap size={40} className="text-[#212529]/50" />
+                        </div>
+                      </div>
+                    )}
+                    {/* bottom gradient overlay */}
+                    <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-[#212529]/70 to-transparent" />
+                    {t.role !== "Teacher" && (
+                      <div className="absolute bottom-3 left-3 text-[10px] font-black uppercase tracking-widest text-[#FFCA2B] bg-[#212529]/80 px-2 py-0.5 rounded-full">
+                        {t.role}
+                      </div>
+                    )}
                   </div>
-                  <h3 className="font-black text-[#212529] text-xl mb-1">{t.name}</h3>
-                  <div className="text-xs font-bold uppercase tracking-widest text-yellow-500 mb-3">{t.role}</div>
-                  <p className="text-gray-600 text-sm leading-relaxed">{t.desc}</p>
+                  {/* Info area */}
+                  <div className="p-5 flex flex-col gap-1 flex-1">
+                    <h3 className="font-black text-[#212529] text-base leading-snug">{t.name}</h3>
+                    <p className="text-gray-400 text-xs leading-relaxed">{t.qualifications}</p>
+                  </div>
+                </div>
+              </StaggerItem>
+            ))}
+          </AnimateStagger>
+
+          {/* Library & Resource Team */}
+          <AnimateIn direction="up" className="text-center mt-20 mb-10">
+            <h2 className="text-3xl md:text-4xl font-black text-[#212529] mt-2">Library &amp; Resource Team</h2>
+            <p className="text-gray-500 mt-3 max-w-xl mx-auto">
+              The administrative and resource professionals who keep our institution informed, organised, and connected.
+            </p>
+          </AnimateIn>
+
+          <AnimateStagger className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" staggerDelay={0.07}>
+            {adminStaff.map((s) => (
+              <StaggerItem key={s.name}>
+                <div className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group h-full flex flex-col">
+                  <div className="relative w-full aspect-[3/4] bg-gradient-to-br from-purple-50 to-gray-100 overflow-hidden">
+                    <Image
+                      unoptimized
+                      src={s.image}
+                      alt={s.name}
+                      fill
+                      className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-[#212529]/70 to-transparent" />
+                  </div>
+                  <div className="p-5 flex flex-col gap-1 flex-1">
+                    <h3 className="font-black text-[#212529] text-base leading-snug">{s.name}</h3>
+                    <div className="text-[10px] font-bold uppercase tracking-widest text-yellow-500">{s.role}</div>
+                    {s.qualifications && <p className="text-gray-400 text-xs leading-relaxed">{s.qualifications}</p>}
+                  </div>
+                </div>
+              </StaggerItem>
+            ))}
+          </AnimateStagger>
+
+          {/* Support Team */}
+          <AnimateIn direction="up" className="text-center mt-20 mb-10">
+            <h2 className="text-3xl md:text-4xl font-black text-[#212529] mt-2">Support &amp; Care Team</h2>
+            <p className="text-gray-500 mt-3 max-w-xl mx-auto">
+              The operations and care staff who ensure safety, transport, and a nurturing environment for every student.
+            </p>
+          </AnimateIn>
+
+          <AnimateStagger className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" staggerDelay={0.07}>
+            {supportStaff.map((s) => (
+              <StaggerItem key={s.name}>
+                <div className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group h-full flex flex-col">
+                  <div className="relative w-full aspect-[3/4] bg-gradient-to-br from-pink-50 to-gray-100 overflow-hidden">
+                    <Image
+                      unoptimized
+                      src={s.image}
+                      alt={s.name}
+                      fill
+                      className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-[#212529]/70 to-transparent" />
+                  </div>
+                  <div className="p-5 flex flex-col gap-1 flex-1">
+                    <h3 className="font-black text-[#212529] text-base leading-snug">{s.name}</h3>
+                    <div className="text-[10px] font-bold uppercase tracking-widest text-yellow-500">{s.role}</div>
+                    {s.qualifications && <p className="text-gray-400 text-xs leading-relaxed">{s.qualifications}</p>}
+                  </div>
                 </div>
               </StaggerItem>
             ))}

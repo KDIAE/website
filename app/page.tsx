@@ -336,36 +336,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── A DAY AT SCHOOL ───────────────────────────────── */}
-      <section className="py-20 bg-gray-50 overflow-hidden">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          <AnimateIn direction="blur" className="text-center mb-14">
-            <h2 className="text-4xl md:text-5xl font-black text-[#212529]">Every Day Flows<br />with <span className="text-[#007BFF]">Purpose</span></h2>
-            <p className="text-gray-500 mt-3 max-w-xl mx-auto">A structured, nurturing routine that balances learning, play, and growth.</p>
-          </AnimateIn>
-          <div className="space-y-4">
-            {daySchedule.map((item, i) => (
-              <AnimateIn key={item.title} direction={i % 2 === 0 ? "left" : "right"} delay={i * 0.06}>
-                <div className="flex items-center gap-4 group">
-                  {/* Icon bubble */}
-                  <div className={`flex-shrink-0 w-14 h-14 rounded-2xl ${item.color} flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-200`}>
-                    <item.icon size={20} />
-                  </div>
-                  {/* Card */}
-                  <div className="flex-1 bg-white rounded-2xl px-5 py-4 border border-gray-100 hover:border-[#007BFF]/30 hover:shadow-md transition-all duration-200">
-                    <div className="flex items-center justify-between gap-2 flex-wrap">
-                      <span className="text-xs font-bold text-[#007BFF] bg-[#007BFF]/10 px-3 py-1 rounded-full">{item.time}</span>
-                      <h3 className="font-black text-[#212529] text-sm">{item.title}</h3>
-                    </div>
-                    <p className="text-gray-500 text-xs mt-1.5 leading-relaxed">{item.desc}</p>
-                  </div>
-                </div>
-              </AnimateIn>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ── GALLERY PREVIEW ───────────────────────────────── */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">

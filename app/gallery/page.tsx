@@ -94,20 +94,20 @@ export default async function GalleryPage() {
   return (
     <>
       {/* Header */}
-      <section className="bg-[#212529] text-white py-16 relative overflow-hidden">
+      <section className="bg-[#212529] text-white py-24 overflow-hidden relative">
         <div className="absolute inset-0">
           <Image src="https://cdn.kdiae.in/gallery/events/gal_1775935050_860bfbb5.jpg" alt="Gallery" fill className="object-cover object-center opacity-20" />
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 text-center">
-          <span className="text-[#FFCA2B] uppercase text-sm font-semibold tracking-widest">Gallery</span>
-          <h1 className="text-4xl md:text-5xl font-black mt-2 mb-4">Life at KDIAE</h1>
-          <p className="text-blue-200 max-w-2xl mx-auto text-lg">
+          <span className="inline-block bg-[#FFCA2B]/20 text-[#FFCA2B] font-bold text-xs uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">Gallery</span>
+          <h1 className="text-5xl md:text-6xl font-black mb-5 leading-tight">Life at KDIAE</h1>
+          <p className="text-gray-400 max-w-2xl mx-auto text-lg leading-relaxed">
             A glimpse into our vibrant campus, classrooms, events, and activities.
           </p>
-          <div className="flex justify-center gap-2 mt-6 text-sm text-blue-300">
+          <div className="flex justify-center gap-2 mt-8 text-sm text-gray-500">
             <Link href="/" className="hover:text-white">Home</Link>
             <span>/</span>
-            <span className="text-white">Gallery</span>
+            <span className="text-white font-semibold">Gallery</span>
           </div>
         </div>
       </section>

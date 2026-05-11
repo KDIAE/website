@@ -60,6 +60,13 @@ const administration = [
     href: null,
   },
   {
+    name: "Arijit Saha",
+    role: "Executive Head – Technology & Innovation",
+    image: "https://cdn.kdiae.in/executive_head.png",
+    desc: "Leading the institute's technology vision and digital transformation to deliver a future-ready learning environment.",
+    href: null,
+  },
+  {
     name: "Principal",
     role: "Principal",
     image: "https://cdn.kdiae.in/blank_person.png",
@@ -79,7 +86,7 @@ export default function AdministrationPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-[#212529] text-white py-20 relative overflow-hidden">
+      <section className="bg-[#212529] text-white py-24 overflow-hidden relative">
         <div className="absolute inset-0">
           <Image src="https://cdn.kdiae.in/gallery/events/gal_1772650456_ba4dbe0a.jpg" alt="Administration" fill className="object-cover object-center opacity-20" />
         </div>
@@ -89,20 +96,23 @@ export default function AdministrationPage() {
           <div className="absolute top-16 right-1/4 opacity-10 animate-float"><FaUserTie size={52} className="text-[#FFCA2B]" /></div>
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 text-center">
-          <AnimateIn direction="up" delay={0.2}>
-            <h1 className="text-4xl md:text-5xl font-black mt-1 mb-4">Administration</h1>
+          <AnimateIn direction="down" delay={0.05}>
+            <span className="inline-block bg-[#FFCA2B]/20 text-[#FFCA2B] font-bold text-xs uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">Administration</span>
           </AnimateIn>
-          <AnimateIn direction="up" delay={0.3}>
-            <p className="text-blue-200 max-w-2xl mx-auto text-lg leading-relaxed">
+          <AnimateIn direction="up" delay={0.15}>
+            <h1 className="text-5xl md:text-6xl font-black mb-5 leading-tight">Administration</h1>
+          </AnimateIn>
+          <AnimateIn direction="up" delay={0.25}>
+            <p className="text-gray-400 max-w-2xl mx-auto text-lg leading-relaxed">
               Meet the dedicated leaders who guide, govern, and shape the future of KDIAE.
             </p>
           </AnimateIn>
-          <AnimateIn direction="fade" delay={0.4}>
-            <div className="flex justify-center items-center gap-2 mt-5 text-sm text-blue-300">
+          <AnimateIn direction="up" delay={0.35}>
+            <div className="flex justify-center gap-2 mt-8 text-sm text-gray-500">
               <Link href="/" className="hover:text-white transition-colors">Home</Link>
-              <FaChevronRight size={10} />
+              <span>/</span>
               <Link href="/about" className="hover:text-white transition-colors">About Us</Link>
-              <FaChevronRight size={10} />
+              <span>/</span>
               <span className="text-white font-semibold">Administration</span>
             </div>
           </AnimateIn>
@@ -120,8 +130,28 @@ export default function AdministrationPage() {
             </p>
           </AnimateIn>
 
-          <AnimateStagger className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8" staggerDelay={0.1}>
-            {administration.map((a) => (
+          <AnimateStagger className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8" staggerDelay={0.1}>
+            {administration.slice(0, 3).map((a) => (
+              <StaggerItem key={a.name}>
+                <div className="group bg-white border border-gray-100 shadow-sm hover:shadow-xl rounded-3xl p-6 transition-all duration-300 hover:-translate-y-2 text-center h-full flex flex-col items-center">
+                  <div className="w-32 h-32 rounded-2xl overflow-hidden border-4 border-[#FFCA2B]/20 group-hover:border-[#FFCA2B] transition-colors shadow-md relative mb-5 flex-shrink-0">
+                    <Image src={a.image} alt={a.name} fill className="object-cover" sizes="128px" />
+                  </div>
+                  <div className="text-xs font-bold text-[#FFCA2B] uppercase tracking-widest mb-1">{a.role}</div>
+                  <h3 className="font-black text-[#212529] text-lg mb-3">{a.name}</h3>
+                  <p className="text-gray-500 text-sm leading-relaxed flex-1">{a.desc}</p>
+                  {a.href && (
+                    <Link href={a.href} className="mt-4 inline-flex items-center gap-1.5 text-sm text-[#212529] font-semibold hover:text-yellow-500 transition-colors">
+                      Read Message <FaChevronRight size={10} />
+                    </Link>
+                  )}
+                </div>
+              </StaggerItem>
+            ))}
+          </AnimateStagger>
+
+          <AnimateStagger className="grid sm:grid-cols-2 gap-8 lg:w-2/3 mx-auto mt-8" staggerDelay={0.1}>
+            {administration.slice(3).map((a) => (
               <StaggerItem key={a.name}>
                 <div className="group bg-white border border-gray-100 shadow-sm hover:shadow-xl rounded-3xl p-6 transition-all duration-300 hover:-translate-y-2 text-center h-full flex flex-col items-center">
                   <div className="w-32 h-32 rounded-2xl overflow-hidden border-4 border-[#FFCA2B]/20 group-hover:border-[#FFCA2B] transition-colors shadow-md relative mb-5 flex-shrink-0">

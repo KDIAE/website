@@ -45,9 +45,9 @@ export default function ChairmanPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-[#212529] text-white py-20 relative overflow-hidden">
+      <section className="bg-[#212529] text-white py-24 overflow-hidden relative">
         <div className="absolute inset-0">
-          <Image src="https://cdn.kdiae.in/gallery/events/gal_1772651057_8640aa21.jpg" alt="Chairman" fill className="object-cover object-center opacity-20" />
+          <Image src="https://cdn.kdiae.in/gallery/events/gal_1772651361_806dbeb5.jpg" alt="Chairman" fill className="object-cover object-center opacity-20" />
         </div>
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
           <div className="absolute top-0 right-0 w-96 h-96 bg-[#FFCA2B]/10 rounded-full blur-3xl translate-x-1/3 -translate-y-1/3 animate-pulse" />
@@ -56,21 +56,24 @@ export default function ChairmanPage() {
           <div className="absolute bottom-10 left-1/3 opacity-10 animate-float-slow"><FaAward size={44} className="text-blue-200" /></div>
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 text-center">
-          <AnimateIn direction="up" delay={0.2}>
-            <h1 className="text-4xl md:text-5xl font-black mt-1 mb-4">Chairman's Message</h1>
+          <AnimateIn direction="down" delay={0.05}>
+            <span className="inline-block bg-[#FFCA2B]/20 text-[#FFCA2B] font-bold text-xs uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">Chairman&apos;s Message</span>
           </AnimateIn>
-          <AnimateIn direction="up" delay={0.3}>
-            <p className="text-blue-200 max-w-2xl mx-auto text-lg leading-relaxed">
-              A message from our Founder & Chairman, Dr. Kalobaran Das.
+          <AnimateIn direction="up" delay={0.15}>
+            <h1 className="text-5xl md:text-6xl font-black mb-5 leading-tight">Chairman&apos;s<br />Message</h1>
+          </AnimateIn>
+          <AnimateIn direction="up" delay={0.25}>
+            <p className="text-gray-400 max-w-2xl mx-auto text-lg leading-relaxed">
+              A message from our Founder &amp; Chairman, Dr. Kalobaran Das.
             </p>
           </AnimateIn>
-          <AnimateIn direction="fade" delay={0.4}>
-            <div className="flex justify-center items-center gap-2 mt-5 text-sm text-blue-300">
+          <AnimateIn direction="up" delay={0.35}>
+            <div className="flex justify-center gap-2 mt-8 text-sm text-gray-500">
               <Link href="/" className="hover:text-white transition-colors">Home</Link>
-              <FaChevronRight size={10} />
+              <span>/</span>
               <Link href="/about" className="hover:text-white transition-colors">About Us</Link>
-              <FaChevronRight size={10} />
-              <span className="text-white font-semibold">Chairman's Message</span>
+              <span>/</span>
+              <span className="text-white font-semibold">Chairman&apos;s Message</span>
             </div>
           </AnimateIn>
         </div>

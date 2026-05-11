@@ -180,88 +180,89 @@ export default function Navbar() {
             {menuOpen ? <FaTimes size={22} /> : <FaBars size={22} />}
           </button>
         </nav>
-      </div>
 
-      {/* Mobile menu */}
-      <AnimatePresence>
-        {menuOpen && (
-          <motion.div
-            className="md:hidden bg-[#212529] px-4 pb-4"
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.25, ease: "easeInOut" }}
-          >
-            <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0 }}>
-              <Link
-                href="/"
-                className="block text-white hover:text-[#FFCA2B] py-2.5 text-sm font-semibold border-b border-white/10"
-                onClick={() => setMenuOpen(false)}
-              >
-                Home
-              </Link>
-            </motion.div>
-
-            {/* Mobile About accordion */}
-            <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.05 }}>
-              <button
-                className="w-full flex items-center justify-between text-white hover:text-[#FFCA2B] py-2.5 text-sm font-semibold border-b border-white/10"
-                onClick={() => setMobileAboutOpen(!mobileAboutOpen)}
-              >
-                About Us
-                <FaChevronDown size={10} className={`transition-transform duration-200 ${mobileAboutOpen ? "rotate-180" : ""}`} />
-              </button>
-              <AnimatePresence>
-                {mobileAboutOpen && (
-                  <motion.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: "auto", opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.2 }}
-                    className="overflow-hidden bg-[#212529] rounded-xl mb-1"
-                  >
-                    {aboutDropdownItems.map((item) => (
-                      <Link
-                        key={item.href}
-                        href={item.href}
-                        className="flex items-center gap-3 px-4 py-3 text-gray-300 hover:text-[#FFCA2B] text-sm border-b border-white/5 last:border-0 transition-colors"
-                        onClick={() => { setMenuOpen(false); setMobileAboutOpen(false); }}
-                      >
-                        <item.icon size={12} className="shrink-0" />
-                        {item.label}
-                      </Link>
-                    ))}
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </motion.div>
-
-            {navLinks.map((link, i) => (
-              <motion.div
-                key={link.href}
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: (i + 2) * 0.05 }}
-              >
+        {/* Mobile menu */}
+        <AnimatePresence>
+          {menuOpen && (
+            <motion.div
+              className="md:hidden bg-[#212529] px-4 pb-4"
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.25, ease: "easeInOut" }}
+            >
+              <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0 }}>
                 <Link
-                  href={link.href}
+                  href="/"
                   className="block text-white hover:text-[#FFCA2B] py-2.5 text-sm font-semibold border-b border-white/10"
                   onClick={() => setMenuOpen(false)}
                 >
-                  {link.label}
+                  Home
                 </Link>
               </motion.div>
-            ))}
-            <Link
-              href="/admissions"
-              className="mt-3 block text-center bg-[#FFCA2B] text-[#212529] font-bold text-sm px-4 py-2.5 rounded-full"
-              onClick={() => setMenuOpen(false)}
-            >
-              Apply Now
-            </Link>
-          </motion.div>
-        )}
-      </AnimatePresence>
+
+              {/* Mobile About accordion */}
+              <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.05 }}>
+                <button
+                  className="w-full flex items-center justify-between text-white hover:text-[#FFCA2B] py-2.5 text-sm font-semibold border-b border-white/10"
+                  onClick={() => setMobileAboutOpen(!mobileAboutOpen)}
+                >
+                  About Us
+                  <FaChevronDown size={10} className={`transition-transform duration-200 ${mobileAboutOpen ? "rotate-180" : ""}`} />
+                </button>
+                <AnimatePresence>
+                  {mobileAboutOpen && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.2 }}
+                      className="overflow-hidden bg-[#212529] rounded-xl mb-1"
+                    >
+                      {aboutDropdownItems.map((item) => (
+                        <Link
+                          key={item.href}
+                          href={item.href}
+                          className="flex items-center gap-3 px-4 py-3 text-gray-300 hover:text-[#FFCA2B] text-sm border-b border-white/5 last:border-0 transition-colors"
+                          onClick={() => { setMenuOpen(false); setMobileAboutOpen(false); }}
+                        >
+                          <item.icon size={12} className="shrink-0" />
+                          {item.label}
+                        </Link>
+                      ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+
+              {navLinks.map((link, i) => (
+                <motion.div
+                  key={link.href}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: (i + 2) * 0.05 }}
+                >
+                  <Link
+                    href={link.href}
+                    className="block text-white hover:text-[#FFCA2B] py-2.5 text-sm font-semibold border-b border-white/10"
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
+                </motion.div>
+              ))}
+              <Link
+                href="/admissions"
+                className="mt-3 block text-center bg-[#FFCA2B] text-[#212529] font-bold text-sm px-4 py-2.5 rounded-full"
+                onClick={() => setMenuOpen(false)}
+              >
+                Apply Now
+              </Link>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+
     </>
   );
 }

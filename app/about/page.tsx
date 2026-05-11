@@ -101,7 +101,7 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-[#212529] text-white py-20 overflow-hidden relative">
+      <section className="bg-[#212529] text-white py-24 overflow-hidden relative">
         <div className="absolute inset-0">
           <Image src="https://cdn.kdiae.in/front_building.jpg" alt="About KDIAE" fill className="object-cover object-center opacity-20" />
         </div>
@@ -112,18 +112,21 @@ export default function AboutPage() {
           <div className="absolute bottom-10 left-1/3 opacity-10 animate-float-slow"><FaGraduationCap size={44} className="text-blue-200" /></div>
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 text-center">
-          <AnimateIn direction="up" delay={0.2}>
-            <h1 className="text-4xl md:text-5xl font-black mt-1 mb-4">Our Story, Values & People</h1>
+          <AnimateIn direction="down" delay={0.05}>
+            <span className="inline-block bg-[#FFCA2B]/20 text-[#FFCA2B] font-bold text-xs uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">About Us</span>
           </AnimateIn>
-          <AnimateIn direction="up" delay={0.3}>
-            <p className="text-blue-200 max-w-2xl mx-auto text-lg leading-relaxed">
+          <AnimateIn direction="up" delay={0.15}>
+            <h1 className="text-5xl md:text-6xl font-black mb-5 leading-tight">Our Story, Values<br />&amp; People</h1>
+          </AnimateIn>
+          <AnimateIn direction="up" delay={0.25}>
+            <p className="text-gray-400 max-w-2xl mx-auto text-lg leading-relaxed">
               Discover the vision, mission, and dedicated individuals behind KD Institute of Advance Education.
             </p>
           </AnimateIn>
-          <AnimateIn direction="fade" delay={0.4}>
-            <div className="flex justify-center items-center gap-2 mt-5 text-sm text-blue-300">
+          <AnimateIn direction="up" delay={0.35}>
+            <div className="flex justify-center gap-2 mt-8 text-sm text-gray-500">
               <Link href="/" className="hover:text-white transition-colors">Home</Link>
-              <FaChevronRight size={10} />
+              <span>/</span>
               <span className="text-white font-semibold">About Us</span>
             </div>
           </AnimateIn>
