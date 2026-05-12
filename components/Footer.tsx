@@ -70,7 +70,7 @@ export default function Footer() {
           <ul className="space-y-3 text-sm">
             <li className="flex gap-2.5 items-start">
               <FaMapMarkerAlt className="shrink-0 mt-0.5 text-[#FFCA2B]" size={14} />
-              <span>Ilsoba, Depara, 13 Pandua-Kalna Road, Hooghly-712146, West Bengal</span>
+              <span>Ilsoba, Daspur, 13 Pandua-Kalna Road, Hooghly-712146, West Bengal</span>
             </li>
             <li className="flex gap-2.5 items-center">
               <FaPhone className="shrink-0 text-[#FFCA2B]" size={13} />

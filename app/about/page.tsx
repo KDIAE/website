@@ -254,7 +254,7 @@ export default function AboutPage() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 text-center">
           <AnimateIn direction="up">
             <h2 className="text-2xl font-black text-[#212529] mb-2">Our Campus</h2>
-            <p className="text-gray-500 mb-8">Ilsoba, Depara, 13 Pandua-Kalna Road, Hooghly-712146, West Bengal</p>
+            <p className="text-gray-500 mb-8">Ilsoba, Daspur, 13 Pandua-Kalna Road, Hooghly-712146, West Bengal</p>
           </AnimateIn>
           <AnimateIn direction="zoom" delay={0.2}>
             <div className="rounded-2xl overflow-hidden shadow-lg border border-gray-200 h-72 hover:shadow-xl transition-shadow">

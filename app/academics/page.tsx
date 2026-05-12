@@ -155,7 +155,7 @@ export default function AcademicsPage() {
           <AnimateStagger className="grid grid-cols-3 gap-6" staggerDelay={0.1}>
             {[
               { value: "3", label: "Learning Stages", color: "text-[#007BFF]" },
-              { value: "CBSE", label: "Affiliated Board", color: "text-[#FFCA2B]" },
+              { value: "CBSE", label: "Oriented Board", color: "text-[#FFCA2B]" },
               { value: "3–11", label: "Age Group (Years)", color: "text-emerald-500" },
             ].map((s) => (
               <StaggerItem key={s.label}>

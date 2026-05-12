@@ -50,13 +50,13 @@ export const metadata: Metadata = {
 };
 
 
-const steps: { step: string; title: string; icon: IconType; bg: string; color: string; desc: string }[] = [
-  { step: "01", title: "Check Eligibility", icon: FaCheckCircle, bg: "bg-[#212529]", color: "#FFCA2B", desc: "Confirm your child meets the age criteria for the desired class." },
-  { step: "02", title: "Download Form", icon: FaFileDownload, bg: "bg-[#007BFF]", color: "#fff", desc: "Obtain the application form from the school office or download it." },
-  { step: "03", title: "Submit Documents", icon: FaPaperclip, bg: "bg-[#212529]", color: "#FFCA2B", desc: "Attach all required documents with the completed application form." },
-  { step: "04", title: "Interaction", icon: FaComments, bg: "bg-[#007BFF]", color: "#fff", desc: "Attend a brief interaction session with the child and parents." },
-  { step: "05", title: "Pay Fees", icon: FaCreditCard, bg: "bg-[#212529]", color: "#FFCA2B", desc: "Complete the fee payment to confirm your child's enrolment." },
-  { step: "06", title: "Welcome!", icon: FaGraduationCap, bg: "bg-[#007BFF]", color: "#fff", desc: "Receive the admission confirmation and join the KDIAE family." },
+const steps: { title: string; icon: IconType; bg: string; color: string; desc: string }[] = [
+  { title: "Check Eligibility", icon: FaCheckCircle, bg: "bg-[#212529]", color: "#FFCA2B", desc: "Confirm your child meets the age criteria for the desired class." },
+  { title: "Download Form", icon: FaFileDownload, bg: "bg-[#007BFF]", color: "#fff", desc: "Obtain the application form from the school office or download it." },
+  { title: "Submit Documents", icon: FaPaperclip, bg: "bg-[#212529]", color: "#FFCA2B", desc: "Attach all required documents with the completed application form." },
+  { title: "Interaction", icon: FaComments, bg: "bg-[#007BFF]", color: "#fff", desc: "Attend a brief interaction session with the child and parents." },
+  { title: "Pay Fees", icon: FaCreditCard, bg: "bg-[#212529]", color: "#FFCA2B", desc: "Complete the fee payment to confirm your child's enrolment." },
+  { title: "Welcome!", icon: FaGraduationCap, bg: "bg-[#007BFF]", color: "#fff", desc: "Receive the admission confirmation and join the KDIAE family." },
 ];
 
 const eligibilityCards = [
@@ -156,14 +156,13 @@ export default function AdmissionsPage() {
             </h2>
           </AnimateIn>
           <AnimateStagger className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6" staggerDelay={0.08}>
-            {steps.map((s) => (
-              <StaggerItem key={s.step}>
+            {steps.map((s, i) => (
+              <StaggerItem key={i}>
                 <div className="bg-white rounded-2xl border border-gray-100 p-6 hover:shadow-lg transition-all duration-300">
                   <div className="flex items-center gap-3 mb-4">
                     <div className={`w-12 h-12 rounded-xl ${s.bg} flex items-center justify-center flex-shrink-0`}>
                       <s.icon size={20} style={{ color: s.color }} />
                     </div>
-                    <span className="text-2xl font-black text-[#007BFF] bg-[#007BFF]/10 px-2.5 py-0.5 rounded-lg">{s.step}</span>
                   </div>
                   <h3 className="font-black text-[#212529] mb-2">{s.title}</h3>
                   <p className="text-gray-500 text-sm leading-relaxed">{s.desc}</p>

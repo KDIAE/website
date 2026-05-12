@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     template: "%s | KDIAE – CBSE School, Hooghly",
   },
   description:
-    "KD Institute of Advance Education (KDIAE) is a leading CBSE-affiliated school in Hooghly, West Bengal offering Nursery to Class VI education. Admissions open for 2026–27.",
+    "KD Institute of Advance Education (KDIAE) is a leading CBSE-oriented school in Hooghly, West Bengal offering Nursery to Class VI education. Admissions open for 2026–27.",
   keywords: [
     "CBSE school Hooghly",
     "KD Institute of Advance Education",

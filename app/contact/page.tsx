@@ -79,7 +79,7 @@ export default function ContactPage() {
                   <FaMapMarkerAlt size={18} className="text-[#FFCA2B] flex-shrink-0 mt-0.5" />
                   <div>
                     <h3 className="font-bold text-[#212529] text-sm mb-0.5">School Address</h3>
-                    <p className="text-gray-500 text-sm leading-relaxed">Ilsoba, Depara, 13 Pandua-Kalna Road,<br />Hooghly-712146, West Bengal, India</p>
+                    <p className="text-gray-500 text-sm leading-relaxed">Ilsoba, Daspur, 13 Pandua-Kalna Road,<br />Hooghly-712146, West Bengal, India</p>
                   </div>
                 </div>
 
@@ -145,7 +145,7 @@ export default function ContactPage() {
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <h2 className="text-2xl font-bold text-[#212529] mb-2 text-center">Find Us on the Map</h2>
-          <p className="text-gray-500 text-sm text-center mb-6">Ilsoba, Depara, 13 Pandua-Kalna Road, Hooghly-712146, West Bengal</p>
+          <p className="text-gray-500 text-sm text-center mb-6">Ilsoba, Daspur, 13 Pandua-Kalna Road, Hooghly-712146, West Bengal</p>
           <div className="rounded-2xl overflow-hidden shadow-lg border border-gray-200 h-72 hover:shadow-xl transition-shadow">
             <iframe
               src="https://maps.google.com/maps?q=kd-INSTITUTE-OF-ADVANCE-EDUCATION&output=embed"

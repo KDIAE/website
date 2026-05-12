@@ -23,6 +23,7 @@ const navLinks = [
   { href: "/academics", label: "Academics" },
   { href: "/gallery", label: "Gallery" },
   { href: "/contact", label: "Contact" },
+  // { href: "/fees", label: "Pay Fees", highlight: true },
 ];
 
 export default function Navbar() {
@@ -53,7 +54,7 @@ export default function Navbar() {
       <div className="bg-[#FFCA2B] text-[#212529] text-md py-1.5 px-4 hidden md:flex justify-between items-center">
         <span className="flex items-center gap-1.5">
           <FaMapMarkerAlt className="shrink-0" />
-          Ilsoba, Depara, 13 Pandua-Kalna Road, Hooghly-712146, WB
+          Ilsoba, Daspur, 13 Pandua-Kalna Road, Hooghly-712146, WB
         </span>
         <span className="flex gap-5 items-center">
           <span className="flex items-center gap-1.5">
