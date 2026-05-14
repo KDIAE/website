@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
+
 import AnimateIn from "@/components/AnimateIn";
 import AnimateStagger from "@/components/AnimateStagger";
 import StaggerItem from "@/components/StaggerItem";
@@ -106,7 +106,7 @@ export default function AcademicsPage() {
       {/* ── HERO ── */}
       <section className="bg-[#212529] text-white py-24 overflow-hidden relative">
         <div className="absolute inset-0">
-          <Image src="https://cdn.kdiae.in/gallery/events/gal_1775934779_3caa59db.jpg" alt="Academics" fill className="object-cover object-center opacity-20" />
+          <img src="https://cdn.kdiae.in/gallery/events/gal_1775934779_3caa59db.jpg" alt="Academics" className="w-full h-full object-cover object-center opacity-20" />
         </div>
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
           <div className="absolute -top-24 -right-24 w-96 h-96 bg-[#007BFF]/15 rounded-full blur-3xl" />

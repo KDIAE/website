@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+
 import Link from "next/link";
 import AnimateIn from "@/components/AnimateIn";
 import AnimateStagger from "@/components/AnimateStagger";
@@ -88,7 +88,7 @@ export default function AdministrationPage() {
       {/* Hero */}
       <section className="bg-[#212529] text-white py-24 overflow-hidden relative">
         <div className="absolute inset-0">
-          <Image src="https://cdn.kdiae.in/gallery/events/gal_1772650456_ba4dbe0a.jpg" alt="Administration" fill className="object-cover object-center opacity-20" />
+          <img src="https://cdn.kdiae.in/gallery/events/gal_1772650456_ba4dbe0a.jpg" alt="Administration" className="w-full h-full object-cover object-center opacity-20" />
         </div>
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
           <div className="absolute top-0 right-0 w-96 h-96 bg-[#FFCA2B]/10 rounded-full blur-3xl translate-x-1/3 -translate-y-1/3 animate-pulse" />
@@ -135,7 +135,7 @@ export default function AdministrationPage() {
               <StaggerItem key={a.name}>
                 <div className="group bg-white border border-gray-100 shadow-sm hover:shadow-xl rounded-3xl p-6 transition-all duration-300 hover:-translate-y-2 text-center h-full flex flex-col items-center">
                   <div className="w-32 h-32 rounded-2xl overflow-hidden border-4 border-[#FFCA2B]/20 group-hover:border-[#FFCA2B] transition-colors shadow-md relative mb-5 flex-shrink-0">
-                    <Image src={a.image} alt={a.name} fill className="object-cover" sizes="128px" />
+                    <img src={a.image} alt={a.name} loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover" />
                   </div>
                   <div className="text-xs font-bold text-[#FFCA2B] uppercase tracking-widest mb-1">{a.role}</div>
                   <h3 className="font-black text-[#212529] text-lg mb-3">{a.name}</h3>
@@ -155,7 +155,7 @@ export default function AdministrationPage() {
               <StaggerItem key={a.name}>
                 <div className="group bg-white border border-gray-100 shadow-sm hover:shadow-xl rounded-3xl p-6 transition-all duration-300 hover:-translate-y-2 text-center h-full flex flex-col items-center">
                   <div className="w-32 h-32 rounded-2xl overflow-hidden border-4 border-[#FFCA2B]/20 group-hover:border-[#FFCA2B] transition-colors shadow-md relative mb-5 flex-shrink-0">
-                    <Image src={a.image} alt={a.name} fill className="object-cover" sizes="128px" />
+                    <img src={a.image} alt={a.name} loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover" />
                   </div>
                   <div className="text-xs font-bold text-[#FFCA2B] uppercase tracking-widest mb-1">{a.role}</div>
                   <h3 className="font-black text-[#212529] text-lg mb-3">{a.name}</h3>

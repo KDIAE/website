@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
+
 import { FaFacebookF, FaLinkedin, FaMapMarkerAlt, FaPhone, FaEnvelope, FaClock, FaChevronRight } from "react-icons/fa";
 
 export default function Footer() {
@@ -9,7 +9,7 @@ export default function Footer() {
         {/* About */}
         <div className="md:col-span-1">
           <div className="flex items-center gap-2 mb-4">
-            <Image src="https://cdn.kdiae.in/logo.png" alt="KDIAE Logo" width={48} height={48} className="h-12 w-auto" />
+            <img src="https://cdn.kdiae.in/logo.png" alt="KDIAE Logo" width={48} height={48} className="h-12 w-auto" />
             <span className="leading-tight">
                 <span className="block text-[#FFCA2B] font-black text-base tracking-wide">KD Institute</span>
                 <span className="block text-white/80 font-medium text-[11px] tracking-[0.15em] uppercase">of Advance Education</span>

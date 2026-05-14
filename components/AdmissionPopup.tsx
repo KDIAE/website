@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Image from "next/image";
+
 import Link from "next/link";
 import { FaTimes, FaGraduationCap } from "react-icons/fa";
 
@@ -51,11 +51,12 @@ export default function AdmissionPopup() {
 
             {/* Image */}
             <div className="relative w-full h-36 overflow-hidden">
-              <Image
+              <img
                 src="https://cdn.kdiae.in/gallery/events/gal_1772651309_2924a298.jpg"
                 alt="KD Institute"
-                fill
-                className="object-cover"
+                loading="lazy"
+                decoding="async"
+                className="absolute inset-0 w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-[#212529]/30" />
             </div>

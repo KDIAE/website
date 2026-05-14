@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
+
 import AnimateIn from "@/components/AnimateIn";
 import AnimateStagger from "@/components/AnimateStagger";
 import StaggerItem from "@/components/StaggerItem";
@@ -246,7 +246,7 @@ export default function TeamPage() {
       {/* Hero */}
       <section className="bg-[#212529] text-white py-24 overflow-hidden relative">
         <div className="absolute inset-0">
-          <Image src="https://cdn.kdiae.in/gallery/events/gal_1775935050_860bfbb5.jpg" alt="Our Team" fill className="object-cover object-center opacity-20" />
+          <img src="https://cdn.kdiae.in/gallery/events/gal_1775935050_860bfbb5.jpg" alt="Our Team" className="w-full h-full object-cover object-center opacity-20" />
         </div>
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
           <div className="absolute top-0 right-0 w-96 h-96 bg-[#FFCA2B]/10 rounded-full blur-3xl translate-x-1/3 -translate-y-1/3 animate-pulse" />
@@ -297,12 +297,12 @@ export default function TeamPage() {
                   {/* Photo area */}
                   <div className="relative w-full aspect-[3/4] bg-gradient-to-br from-[#FFCA2B]/30 to-gray-100 overflow-hidden">
                     {t.image ? (
-                      <Image
-                        unoptimized
+                      <img
                         src={t.image}
                         alt={t.name}
-                        fill
-                        className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                        loading="lazy"
+                        decoding="async"
+                        className="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                       />
                     ) : (
                       <div className="absolute inset-0 flex items-center justify-center">
@@ -342,12 +342,12 @@ export default function TeamPage() {
               <StaggerItem key={s.name}>
                 <div className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group h-full flex flex-col">
                   <div className="relative w-full aspect-[3/4] bg-gradient-to-br from-purple-50 to-gray-100 overflow-hidden">
-                    <Image
-                      unoptimized
+                    <img
                       src={s.image}
                       alt={s.name}
-                      fill
-                      className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
+                      decoding="async"
+                      className="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-[#212529]/70 to-transparent" />
                   </div>
@@ -374,12 +374,12 @@ export default function TeamPage() {
               <StaggerItem key={s.name}>
                 <div className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group h-full flex flex-col">
                   <div className="relative w-full aspect-[3/4] bg-gradient-to-br from-pink-50 to-gray-100 overflow-hidden">
-                    <Image
-                      unoptimized
+                    <img
                       src={s.image}
                       alt={s.name}
-                      fill
-                      className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
+                      decoding="async"
+                      className="absolute inset-0 w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-[#212529]/70 to-transparent" />
                   </div>

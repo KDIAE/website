@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+
 import Link from "next/link";
 import AnimateIn from "@/components/AnimateIn";
 import MarqueeStrip from "@/components/MarqueeStrip";
@@ -47,7 +47,7 @@ export default function ChairmanPage() {
       {/* Hero */}
       <section className="bg-[#212529] text-white py-24 overflow-hidden relative">
         <div className="absolute inset-0">
-          <Image src="https://cdn.kdiae.in/gallery/events/gal_1772651361_806dbeb5.jpg" alt="Chairman" fill className="object-cover object-center opacity-20" />
+          <img src="https://cdn.kdiae.in/gallery/events/gal_1775934744_161e22d4.jpg" alt="Chairman" className="w-full h-full object-cover object-center opacity-20" />
         </div>
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
           <div className="absolute top-0 right-0 w-96 h-96 bg-[#FFCA2B]/10 rounded-full blur-3xl translate-x-1/3 -translate-y-1/3 animate-pulse" />
@@ -89,7 +89,7 @@ export default function ChairmanPage() {
               <div className="md:flex">
                 <div className="md:w-80 flex-shrink-0 bg-[#212529] flex flex-col items-center justify-center p-10 gap-5">
                   <div className="w-44 h-44 rounded-2xl overflow-hidden border-4 border-[#FFCA2B]/40 shadow-xl relative">
-                    <Image src="https://cdn.kdiae.in/chairman.jpg" alt="Dr. Kalobaran Das" fill className="object-cover" sizes="176px" />
+                    <img src="https://cdn.kdiae.in/chairman.jpg" alt="Dr. Kalobaran Das" loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover" />
                   </div>
                   <div className="text-center">
                     <div className="text-xl font-black text-[#FFCA2B]">Dr. Kalobaran Das</div>

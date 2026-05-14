@@ -1,6 +1,5 @@
 "use client";
 import { useState } from "react";
-import Image from "next/image";
 
 export interface GalleryItem {
   src: string;
@@ -75,14 +74,20 @@ export default function GalleryClient({
                   key={item.src}
                   onClick={() => setLightbox(item)}
                   className="group relative aspect-square cursor-pointer rounded-2xl overflow-hidden shadow-sm border border-white hover:shadow-md focus:outline-none"
+                  itemScope
+                  itemType="https://schema.org/ImageObject"
                 >
-                  <Image
+                  {/* Direct CDN URL - no next/image proxy so Googlebot can index the real image URL */}
+                  <img
                     src={item.src}
                     alt={item.subtitle}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-300"
-                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                    loading="lazy"
+                    decoding="async"
+                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    itemProp="contentUrl"
                   />
+                  <meta itemProp="name" content={item.subtitle} />
+                  <meta itemProp="description" content={`${item.category} – ${item.subtitle}`} />
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors flex flex-col items-start justify-end p-3 opacity-0 group-hover:opacity-100">
                     <span className="text-white text-xs font-bold leading-snug line-clamp-2">
                       {item.subtitle}
@@ -145,11 +150,11 @@ export default function GalleryClient({
             className="relative max-w-4xl w-full"
             onClick={(e) => e.stopPropagation()}
           >
-            <Image
+            <img
               src={lightbox.src}
               alt={lightbox.subtitle}
-              width={1200}
-              height={800}
+              loading="eager"
+              decoding="async"
               className="object-contain w-full h-auto rounded-xl max-h-[80vh]"
             />
             <div className="mt-3 text-center">

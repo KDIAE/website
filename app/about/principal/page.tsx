@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+
 import Link from "next/link";
 import AnimateIn from "@/components/AnimateIn";
 import MarqueeStrip from "@/components/MarqueeStrip";
@@ -47,7 +47,7 @@ export default function PrincipalPage() {
       {/* Hero */}
       <section className="bg-[#212529] text-white py-24 overflow-hidden relative">
         <div className="absolute inset-0">
-          <Image src="https://cdn.kdiae.in/cdn-cgi/image/format=webp,quality=80,width=800/teaching_faculty/Priyanka_Datta.png" alt="Principal" fill className="object-cover object-center opacity-20" />
+          <img src="https://cdn.kdiae.in/cdn-cgi/image/format=webp,quality=80,width=800/teaching_faculty/Priyanka_Datta.png" alt="Principal" className="w-full h-full object-cover object-center opacity-20" />
         </div>
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
           <div className="absolute top-0 right-0 w-96 h-96 bg-[#FFCA2B]/10 rounded-full blur-3xl translate-x-1/3 -translate-y-1/3 animate-pulse" />
@@ -90,7 +90,7 @@ export default function PrincipalPage() {
             <div className="bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 md:flex mb-14">
               <div className="md:w-72 flex-shrink-0 bg-[#f0f7ff] flex flex-col items-center justify-center p-10 gap-5">
                 <div className="w-40 h-40 rounded-2xl overflow-hidden border-4 border-blue-200 shadow-lg relative">
-                  <Image src="https://cdn.kdiae.in/blank_person.png" alt="Principal" fill className="object-cover" sizes="160px" />
+                  <img src="https://cdn.kdiae.in/blank_person.png" alt="Principal" loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover" />
                 </div>
                 <div className="text-center">
                   <div className="text-lg font-black text-[#212529]">Principal</div>
@@ -129,7 +129,7 @@ export default function PrincipalPage() {
             <div className="bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 md:flex">
               <div className="md:w-72 flex-shrink-0 bg-yellow-50 flex flex-col items-center justify-center p-10 gap-5">
                 <div className="w-40 h-40 rounded-2xl overflow-hidden border-4 border-yellow-300 shadow-lg relative">
-                  <Image src="https://cdn.kdiae.in/vice_Principal.jpg" alt="Priyanka Datta" fill className="object-cover" sizes="160px" />
+                  <img src="https://cdn.kdiae.in/vice_Principal.jpg" alt="Priyanka Datta" loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover" />
                 </div>
                 <div className="text-center">
                   <div className="text-lg font-black text-[#212529]">Priyanka Datta</div>

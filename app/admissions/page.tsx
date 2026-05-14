@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import Link from "next/link";
-import Image from "next/image";
+
 import AnimateIn from "@/components/AnimateIn";
 import AnimateStagger from "@/components/AnimateStagger";
 import StaggerItem from "@/components/StaggerItem";
@@ -87,7 +87,7 @@ export default function AdmissionsPage() {
       {/* Hero */}
       <section className="relative bg-[#212529] text-white overflow-hidden py-24 min-h-[70vh] flex items-center">
         <div className="absolute inset-0">
-          <Image src="https://cdn.kdiae.in/gallery/events/gal_1775935126_9381a0c1.jpg" alt="Admissions" fill className="object-cover opacity-15" />
+          <img src="https://cdn.kdiae.in/gallery/events/gal_1775935126_9381a0c1.jpg" alt="Admissions" className="w-full h-full object-cover opacity-[0.15]" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#212529]/95 to-[#212529]/60" />
         </div>
         {/* Blobs */}

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
+
 import AnimateIn from "@/components/AnimateIn";
 
 export const metadata: Metadata = {
@@ -92,12 +92,12 @@ export default function Home() {
       <section className="relative min-h-screen flex items-center overflow-hidden ">
         {/* Background image */}
         <div className="absolute inset-0">
-          <Image
+          <img
             src="https://cdn.kdiae.in/front_building.jpg"
             alt="Students learning"
-            fill
-            className="object-cover object-center"
-            priority
+            fetchPriority="high"
+            decoding="sync"
+            className="absolute inset-0 w-full h-full object-cover object-center"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#212529]/70 to-[#212529]/10" />
         </div>
@@ -184,7 +184,7 @@ export default function Home() {
               key={img.alt}
               className={`relative flex-1 min-w-0 rounded-2xl overflow-hidden shadow-lg ${i === 1 ? "h-52" : i === 2 ? "h-44" : "h-48"} hover:scale-[1.02] transition-transform duration-300`}
             >
-              <Image src={img.src} alt={img.alt} fill className="object-cover" />
+              <img src={img.src} alt={img.alt} loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
             </div>
           ))}
@@ -199,11 +199,12 @@ export default function Home() {
             <AnimateIn direction="left">
               <div className="relative">
                 <div className="rounded-3xl overflow-hidden aspect-square relative shadow-2xl">
-                  <Image
+                  <img
                     src="https://cdn.kdiae.in/gallery/academic/gal_1774722490_7e9cd133.jpg"
                     alt="Happy school kids"
-                    fill
-                    className="object-cover"
+                    loading="lazy"
+                    decoding="async"
+                    className="absolute inset-0 w-full h-full object-cover"
                   />
                 </div>
                 {/* Floating info cards */}
@@ -352,7 +353,7 @@ export default function Home() {
               { src: "https://cdn.kdiae.in/gallery/academic/gal_1774723502_4f373141.jpg", alt: "Activity" },
             ].map((img) => (
               <StaggerItem key={img.alt} className={`${img.span || ""} rounded-2xl overflow-hidden relative group`}>
-                <Image src={img.src} alt={img.alt} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
+                <img src={img.src} alt={img.alt} loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                 <div className="absolute inset-0 bg-[#212529]/0 group-hover:bg-[#212529]/20 transition-colors duration-300" />
               </StaggerItem>
             ))}

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import Link from "next/link";
-import Image from "next/image";
+
 import {
   FaMapMarkerAlt, FaPhone, FaEnvelope, FaClock,
   FaFacebook, FaLinkedin
@@ -50,7 +50,7 @@ export default function ContactPage() {
       {/* Header */}
       <section className="bg-[#212529] text-white py-24 overflow-hidden relative">
         <div className="absolute inset-0">
-          <Image src="https://cdn.kdiae.in/gallery/events/gal_1775935126_9381a0c1.jpg" alt="Contact" fill className="object-cover object-center opacity-20" />
+          <img src="https://cdn.kdiae.in/gallery/events/gal_1775935126_9381a0c1.jpg" alt="Contact" className="w-full h-full object-cover object-center opacity-20" />
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 text-center">
           <span className="inline-block bg-[#FFCA2B]/20 text-[#FFCA2B] font-bold text-xs uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">Contact</span>

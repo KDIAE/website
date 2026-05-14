@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
+
 import AnimateIn from "@/components/AnimateIn";
 import AnimateStagger from "@/components/AnimateStagger";
 import StaggerItem from "@/components/StaggerItem";
@@ -85,7 +85,7 @@ export default function VisionMissionPage() {
       {/* Hero */}
       <section className="bg-[#212529] text-white py-24 overflow-hidden relative">
         <div className="absolute inset-0">
-          <Image src="https://cdn.kdiae.in/gallery/academic/gal_1774722698_b12ef32b.jpg" alt="Vision & Mission" fill className="object-cover object-center opacity-20" />
+          <img src="https://cdn.kdiae.in/gallery/academic/gal_1774722698_b12ef32b.jpg" alt="Vision & Mission" className="w-full h-full object-cover object-center opacity-20" />
         </div>
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
           <div className="absolute top-0 right-0 w-96 h-96 bg-[#FFCA2B]/10 rounded-full blur-3xl translate-x-1/3 -translate-y-1/3 animate-pulse" />

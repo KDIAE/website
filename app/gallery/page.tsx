@@ -1,12 +1,9 @@
 import type { Metadata } from "next";
-import dynamic from "next/dynamic";
-import Image from "next/image";
 import Link from "next/link";
+import GalleryClient from "@/components/GalleryClient";
 import type { GalleryItem } from "@/components/GalleryClient";
 
-const GalleryClient = dynamic(() => import("@/components/GalleryClient"), { loading: () => <div className="min-h-[600px] animate-pulse bg-gray-100 rounded-3xl" /> });
-
-export const revalidate = 60; // revalidate every 60 seconds
+export const dynamic = "force-dynamic";
 
 async function fetchGalleryData(): Promise<{ items: GalleryItem[]; categories: string[] }> {
   const backendUrl = process.env.BACKEND_URL;
@@ -15,8 +12,8 @@ async function fetchGalleryData(): Promise<{ items: GalleryItem[]; categories: s
   }
 
   try {
-    const res = await fetch(`${backendUrl}/api/gallery/public?limit=1000`, {
-      next: { revalidate: 60 },
+    const res = await fetch(`${backendUrl}/api/gallery/public?limit=12`, {
+      cache: "no-store",
     });
     if (!res.ok) throw new Error("Failed to fetch gallery");
 
@@ -91,12 +88,33 @@ const ITEMS_PER_PAGE = 12;
 
 export default async function GalleryPage() {
   const { items: galleryItems, categories } = await fetchGalleryData();
+
+  // JSON-LD: ImageGallery structured data so Google indexes actual CDN URLs
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ImageGallery",
+    name: "Life at KDIAE – Campus Gallery",
+    description:
+      "Photos from events, academics, sports, and everyday campus life at KD Institute of Advance Education, Hooghly, West Bengal.",
+    url: "https://kdiae.in/gallery",
+    image: galleryItems.map((item) => ({
+      "@type": "ImageObject",
+      contentUrl: item.src,
+      name: item.subtitle,
+      description: `${item.category} – ${item.subtitle}`,
+    })),
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Header */}
       <section className="bg-[#212529] text-white py-24 overflow-hidden relative">
         <div className="absolute inset-0">
-          <Image src="https://cdn.kdiae.in/gallery/events/gal_1775935050_860bfbb5.jpg" alt="Gallery" fill className="object-cover object-center opacity-20" />
+          <img src="https://cdn.kdiae.in/gallery/events/gal_1775935050_860bfbb5.jpg" alt="Gallery" className="w-full h-full object-cover object-center opacity-20" />
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 text-center">
           <span className="inline-block bg-[#FFCA2B]/20 text-[#FFCA2B] font-bold text-xs uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">Gallery</span>
