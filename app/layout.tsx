@@ -6,7 +6,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollProgress from "@/components/ScrollProgress";
 import FloatingButtons from "@/components/FloatingButtons";
-import AdmissionPopup from "@/components/AdmissionPopup";
+// import AdmissionPopup from "@/components/AdmissionPopup";
 import ConsoleLogger from "@/components/ConsoleLogger";
 
 const sourceSans3 = Source_Sans_3({
@@ -89,7 +89,7 @@ export default function RootLayout({
         <main className="flex-1">{children}</main>
         <Footer />
         <FloatingButtons />
-        <AdmissionPopup />
+        {/* <AdmissionPopup /> */}
         <ConsoleLogger />
       </body>
     </html>
