@@ -53,6 +53,13 @@ const administration = [
     href: "/about/chairman",
   },
   {
+    name: "Priyanka Datta",
+    role: "Vice Principal",
+    image: "https://cdn.kdiae.in/vice_Principal.jpg",
+    desc: "Dedicated to holistic education guided by core values of Courage, Compassion, Equality, and Integrity.",
+    href: "/about/principal",
+  },
+  {
     name: "Aneek Banerjee",
     role: "Chief Advisor",
     image: "https://cdn.kdiae.in/chief_advisor.jpg",
@@ -66,20 +73,14 @@ const administration = [
     desc: "Leading the institute's technology vision and digital transformation to deliver a future-ready learning environment.",
     href: null,
   },
-  {
-    name: "Principal",
-    role: "Principal",
-    image: "https://cdn.kdiae.in/blank_person.png",
-    desc: "Academic head committed to nurturing a culture of curiosity, excellence, and purposeful learning.",
-    href: "/about/principal",
-  },
-  {
-    name: "Priyanka Datta",
-    role: "Vice Principal",
-    image: "https://cdn.kdiae.in/vice_Principal.jpg",
-    desc: "Dedicated to holistic education guided by core values of Courage, Compassion, Equality, and Integrity.",
-    href: "/about/principal",
-  },
+  // {
+  //   name: "Principal",
+  //   role: "Principal",
+  //   image: "https://cdn.kdiae.in/blank_person.png",
+  //   desc: "Academic head committed to nurturing a culture of curiosity, excellence, and purposeful learning.",
+  //   href: "/about/principal",
+  // },
+  
 ];
 
 export default function AdministrationPage() {
@@ -130,8 +131,8 @@ export default function AdministrationPage() {
             </p>
           </AnimateIn>
 
-          <AnimateStagger className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8" staggerDelay={0.1}>
-            {administration.slice(0, 3).map((a) => (
+          <AnimateStagger className="grid sm:grid-cols-2 lg:grid-cols-2 gap-8" staggerDelay={0.1}>
+            {administration.slice(0, 4).map((a) => (
               <StaggerItem key={a.name}>
                 <div className="group bg-white border border-gray-100 shadow-sm hover:shadow-xl rounded-3xl p-6 transition-all duration-300 hover:-translate-y-2 text-center h-full flex flex-col items-center">
                   <div className="w-32 h-32 rounded-2xl overflow-hidden border-4 border-[#FFCA2B]/20 group-hover:border-[#FFCA2B] transition-colors shadow-md relative mb-5 flex-shrink-0">
@@ -150,7 +151,7 @@ export default function AdministrationPage() {
             ))}
           </AnimateStagger>
 
-          <AnimateStagger className="grid sm:grid-cols-2 gap-8 lg:w-2/3 mx-auto mt-8" staggerDelay={0.1}>
+          {/* <AnimateStagger className="grid sm:grid-cols-2 gap-8 lg:w-2/3 mx-auto mt-8" staggerDelay={0.1}>
             {administration.slice(3).map((a) => (
               <StaggerItem key={a.name}>
                 <div className="group bg-white border border-gray-100 shadow-sm hover:shadow-xl rounded-3xl p-6 transition-all duration-300 hover:-translate-y-2 text-center h-full flex flex-col items-center">
@@ -168,7 +169,7 @@ export default function AdministrationPage() {
                 </div>
               </StaggerItem>
             ))}
-          </AnimateStagger>
+          </AnimateStagger> */}
         </div>
       </section>
     </>
