@@ -143,7 +143,9 @@ export default function AdministrationPage() {
                   <div className="text-xs font-bold text-[#FFCA2B] uppercase tracking-widest mb-1">{a.role}</div>
                   <h3 className="font-black text-[#212529] text-lg mb-3">{a.name}</h3>
                   <p className="text-gray-500 text-sm leading-relaxed flex-1">{a.desc}</p>
+                  {a.linkdin && (
                   <a href={a.linkdin}><FaLinkedin size={14} className="text-[#0A66C2]" /></a>
+                  )}
                   {a.href && (
                     <Link href={a.href} className="mt-4 inline-flex items-center gap-1.5 text-sm text-[#212529] font-semibold hover:text-yellow-500 transition-colors">
                       Read Message <FaChevronRight size={10} />
