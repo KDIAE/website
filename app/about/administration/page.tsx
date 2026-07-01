@@ -5,7 +5,7 @@ import AnimateIn from "@/components/AnimateIn";
 import AnimateStagger from "@/components/AnimateStagger";
 import StaggerItem from "@/components/StaggerItem";
 import MarqueeStrip from "@/components/MarqueeStrip";
-import { FaChevronRight, FaUserTie } from "react-icons/fa";
+import { FaChevronRight, FaUserTie, FaLinkedin } from "react-icons/fa";
 
 export const metadata: Metadata = {
   title: "Administration – Leadership Team | KDIAE",
@@ -65,6 +65,7 @@ const administration = [
     image: "https://cdn.kdiae.in/chief_advisor.jpg",
     desc: "Strategic advisor providing guidance on institutional development, governance, and educational policy.",
     href: null,
+    linkdin: "https://www.linkedin.com/in/aneek-b-b03293246/"
   },
   {
     name: "Arijit Saha",
@@ -72,6 +73,7 @@ const administration = [
     image: "https://cdn.kdiae.in/executive_head.png",
     desc: "Leading the institute's technology vision and digital transformation to deliver a future-ready learning environment.",
     href: null,
+    linkdin: "https://www.linkedin.com/in/draunzler/"
   },
   // {
   //   name: "Principal",
@@ -141,6 +143,7 @@ export default function AdministrationPage() {
                   <div className="text-xs font-bold text-[#FFCA2B] uppercase tracking-widest mb-1">{a.role}</div>
                   <h3 className="font-black text-[#212529] text-lg mb-3">{a.name}</h3>
                   <p className="text-gray-500 text-sm leading-relaxed flex-1">{a.desc}</p>
+                  <a href={a.linkdin}><FaLinkedin size={14} className="text-[#0A66C2]" /></a>
                   {a.href && (
                     <Link href={a.href} className="mt-4 inline-flex items-center gap-1.5 text-sm text-[#212529] font-semibold hover:text-yellow-500 transition-colors">
                       Read Message <FaChevronRight size={10} />
