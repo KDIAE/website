@@ -1,19 +1,10 @@
 import type { Metadata } from "next";
-import dynamic from "next/dynamic";
 import Link from "next/link";
 
 import AnimateIn from "@/components/AnimateIn";
-import AnimateStagger from "@/components/AnimateStagger";
-import StaggerItem from "@/components/StaggerItem";
 import MarqueeStrip from "@/components/MarqueeStrip";
-import {
-  FaGraduationCap, FaHandsHelping, FaLeaf, FaUsers, FaArrowRight,
-  FaBook, FaUserTie, FaChevronRight,
-} from "react-icons/fa";
-
-const TeacherTeamsTimeline = dynamic(() => import("@/components/TeacherTeamsTimeline"), {
-  loading: () => <div className="h-80 animate-pulse bg-gray-100 rounded-3xl max-w-2xl mx-auto" />,
-});
+import { FaGraduationCap, FaUsers, FaArrowRight } from "react-icons/fa";
+import TeachersDirectory from "@/components/TeachersDirectory";
 
 export const metadata: Metadata = {
   title: "Our Team – Educators & Staff | KDIAE",
@@ -50,65 +41,6 @@ export const metadata: Metadata = {
     images: ["https://cdn.kdiae.in/gallery/events/gal_1772650456_ba4dbe0a.jpg"],
   },
 };
-
-const BLANK = "https://cdn.kdiae.in/blank_person.png"; // kept for reference
-
-const ourTeam = [
-  {
-    name: "Teaching Faculty",
-    role: "CBSE Certified Educators",
-    icon: FaGraduationCap,
-    desc: "Our teachers are qualified, passionate, and committed professionals who bring subjects to life with engaging methodologies.",
-    bg: "bg-blue-50",
-    iconColor: "text-blue-600",
-    ringColor: "bg-blue-100",
-  },
-  {
-    name: "Administrative Staff",
-    role: "Operations & Coordination",
-    icon: FaUserTie,
-    desc: "A dedicated team ensuring seamless day-to-day operations, parent communication, and institutional management.",
-    bg: "bg-yellow-50",
-    iconColor: "text-yellow-500",
-    ringColor: "bg-amber-100",
-  },
-  {
-    name: "Support & Care Staff",
-    role: "Safety, Health & Welfare",
-    icon: FaHandsHelping,
-    desc: "Trained personnel focused on student safety, health, transport, and the general well-being of every child.",
-    bg: "bg-pink-50",
-    iconColor: "text-pink-600",
-    ringColor: "bg-pink-100",
-  },
-  {
-    name: "Sports & Activity Coaches",
-    role: "Physical & Co-curricular",
-    icon: FaLeaf,
-    desc: "Coaches guiding students in sports, arts, and co-curricular programs that build teamwork and healthy habits.",
-    bg: "bg-green-50",
-    iconColor: "text-green-600",
-    ringColor: "bg-green-100",
-  },
-  {
-    name: "Library & Resource Team",
-    role: "Knowledge & Digital Resources",
-    icon: FaBook,
-    desc: "Curating an inspiring reading environment and digital resources that fuel curiosity and independent learning.",
-    bg: "bg-purple-50",
-    iconColor: "text-purple-600",
-    ringColor: "bg-purple-100",
-  },
-  {
-    name: "Parent-Teacher Council",
-    role: "Community Partnership",
-    icon: FaUsers,
-    desc: "Parents and teachers working together in an active partnership to support every child's academic and personal journey.",
-    bg: "bg-sky-50",
-    iconColor: "text-sky-600",
-    ringColor: "bg-sky-100",
-  },
-];
 
 export default function TeamPage() {
   return (
@@ -152,16 +84,8 @@ export default function TeamPage() {
 
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          {/* Meet Our Teachers */}
-          <AnimateIn direction="up" className="text-center mt-10 mb-10">
-            <h2 className="text-3xl md:text-4xl font-black text-[#212529] mt-2">Meet Our Teachers</h2>
-            <p className="text-gray-500 mt-3 max-w-xl mx-auto">
-              Qualified, passionate educators dedicated to nurturing every student's potential. Hover over a team to meet its members.
-            </p>
-          </AnimateIn>
-
-          {/* Teachers Timeline */}
-          <TeacherTeamsTimeline />
+          {/* Teachers Directory Section */}
+          <TeachersDirectory />
 
           {/* CTA */}
           <AnimateIn direction="zoom" delay={0.2}>
