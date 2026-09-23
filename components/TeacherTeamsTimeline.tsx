@@ -41,7 +41,7 @@ const teams: Team[] = [
     Icon: FaPalette,
     members: [
       { name: "Kingshuk Mukherjee",     role: "Teacher", qualifications: "BA – English, MA – History, D.El.Ed",               image: CDN("Kingshuk_Mukherjee.JPG") },
-      { name: "Sanchita Chatterjee",    role: "Teacher", qualifications: "MA – Bengali, B.Ed",                                image: CDN("Sanchita_Chatterjee.png") },
+      { name: "Sanhita Chatterjee",    role: "Teacher", qualifications: "MA – Bengali, B.Ed",                                image: CDN("Sanhita_Chatterjee.png") },
       { name: "Maitrayee Bhattacharya", role: "Teacher", qualifications: "MA – Sanskrit (Montessori-Trained)",                image: CDN("Maitrayee_Bhattacharya.png") },
       { name: "Saswati Roy",            role: "Teacher", qualifications: "MA, B.Ed",                                          image: CDN("Saswati_Roy.JPG") },
       { name: "Chaitali Singh",         role: "Teacher", qualifications: "MA – English",                                      image: BLANK_F },
